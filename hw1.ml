@@ -26,21 +26,25 @@ let primes = function
 (*Part 3 - inorder*)
 let rec inorder = function
 | [] -> true (*How do you handle x2 being []?*)
+| x1 :: [] -> true
 | x1 :: x2 :: xs -> if (x1 > x2) then false else inorder (x2 :: xs)
 
 (*Part 4 - swapfirst*)
 let rec swapfirst = function
 | [] -> []
-| x1 :: x2 :: xs -> if (x1 > x2) then (x2 :: x1 :: xs) else swapfirst (x2 :: xs)
+| x :: [] -> x :: []
+| x1 :: x2 :: xs -> if (x1 > x2) then (x2 :: x1 :: xs) else (x1 :: swapfirst (x2 :: xs))
 
 (*Part 5 - poorsort*)
 let rec poorsort_rec i = function
 | [] -> ([], i)
-| x1 :: x2 :: xs -> if (x1 > x2) then (poorsort_rec x2 :: x1 :: xs (i + 1)) else (poorsort_rec x2 :: xs i)
+| x :: [] -> (x :: [], i)
+| x1 :: x2 :: xs -> let (a,b) = (poorsort_rec i (x2::xs)) in if (x1 > x2) then (poorsort_rec (i + 1) (x2 :: x1 :: xs)) else ((x1::a), b)
 
 let rec poorsort = function
 | [] -> ([], 0)
-| xs -> if (inorder xs) then ((xs),0) else (poorsort_rec xs 0)
+| xs -> if (inorder xs) then ((xs),0) else (poorsort_rec 0 xs)
+
 
 (*Part 6 - first_repeat*)
 let rec contains_elem n= function
@@ -49,7 +53,7 @@ let rec contains_elem n= function
 
 let rec first_repeat = function
 | [] -> raise NoneSuch
-| x1 :: xs -> if contains_elem(x1 xs) then x1 else first_repeat xs
+| x1 :: xs -> if (contains_elem x1 xs) then x1 else first_repeat xs
 
 (*Part 7 - supdivisor*)
 let rec factorial x =

@@ -1,0 +1,4 @@
+let rec indivisible = function
+(*| i=0 -> true*)
+| [] -> true
+| x::xs -> (x mod i != 0) && indivisible xs

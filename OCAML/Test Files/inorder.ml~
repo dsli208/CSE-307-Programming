@@ -1,0 +1,3 @@
+let rec inorder = function
+| [] -> true
+| x :: xs -> 

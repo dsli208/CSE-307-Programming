@@ -87,8 +87,9 @@ class UnaryExpr(Expr):
             return - arg_value
         elif (self.uop == "not"):
             # What is self.op?  Doesn't look defined.
+            return not arg_value
             # Implement the "not"
-            raise Unimplemented("Unimplemented evaluation for unary operator %s at line %d"% (self.uop, self.lineno))
+            #raise Unimplemented("Unimplemented evaluation for unary operator %s at line %d"% (self.uop, self.lineno))
         else:
             raise InternalError("Unknown unary operator: %s in lineno %d"% (self.uop, self.lineno))
 
@@ -124,42 +125,45 @@ class BinaryExpr(Expr):
             # Can't we just evaluate each of the other expressions?
             #raise Unimplemented("Unimplemented evaluation for binary operator: %s in lineno %d"% (self.bop, self.lineno))
         elif (self.bop == "="):
-            return arg2_value
+            if (arg1_value == arg2_value):
+                return True
+            else:
+                return False
         elif (self.bop == "<>"):
             if (arg1_value == arg2_value):
-                return 0
+                return False
             else:
-                return 1
+                return True
         elif (self.bop == "<="):
             if (arg1_value <= arg2_value):
-                return 1
+                return True
             else:
-                return 0
+                return False
         elif (self.bop == ">="):
             if (arg1_value >= arg2_value):
-                return 1
+                return True
             else:
-                return 0
+                return False
         elif (self.bop == ">"):
             if (arg1_value > arg2_value):
-                return 1
+                return True
             else:
-                return 0
+                return False
         elif (self.bop == "<"):
             if (arg1_value < arg2_value):
-                return 1
+                return True
             else:
-                return 0
+                return False
         elif (self.bop == "||"):
             if (arg1_value > 0 or arg2_value > 0):
-                return 1
+                return True
             else:
-                return 0
+                return False
         elif (self.bop == "&&"):
             if (arg1_value > 0 and arg2_value > 0):
-                return 1
+                return True
             else:
-                return 0
+                return False
         else:
             raise InternalError("Unknown binary operator: %s in lineno %d"% (self.bop, self.lineno))
 
@@ -175,9 +179,13 @@ class IfExpr(Expr):
     def __str__(self):
         return "If({0}, {1}, {2})".format(self.cond, self.thenpart, self.elsepart)
 
-
+    # Test this
     def eval(self, env):
-        raise Unimplemented("Unimplemented evaluation for If expression in lineno %d"% self .lineno)
+        cond_value = self.cond.eval(env)
+        if (cond_value == True):
+            return self.thenpart.eval(env)
+        else:
+            return self.elsepart.eval(env)
 
 
 # STUDY LET EXPRESSIONS MORE
@@ -194,4 +202,6 @@ class LetExpr(Expr):
 
 
     def eval(self, env):
-        raise Unimplemented("Unimplemented evaluation for Let expression in lineno %d"% self .lineno)
+        def_expr_value = self.defexpr.eval(env)
+        env[self.name] = def_expr_value
+        return self.useexpr.eval(env)

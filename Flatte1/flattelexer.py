@@ -1,7 +1,7 @@
 # -----------------------------------------------------------------------------
 # flattelexer.py
 #
-# An interpreter for Flatte(1), built by modifying the simple calculator 
+# An interpreter for Flatte(1), built by modifying the simple calculator
 # example from http://www.dabeaz.com/ply/example.html
 # but one that builds AST and then evaluates it.
 #
@@ -30,7 +30,7 @@ reserved = {
 # Tokens
 tokens = [
     'NAME','NUMBER',
-    'PLUS','MINUS','TIMES','DIVIDE', 
+    'PLUS','MINUS','TIMES','DIVIDE',
     'EQUALS',
     'NOTEQUALS', 'LEQ', 'GEQ', 'LT', 'GT',
     'AND', 'OR',
@@ -45,7 +45,7 @@ t_DIVIDE  = r'/'
 t_EQUALS  = r'='
 t_NOTEQUALS  = r'<>'
 t_LEQ = r'<='
-t_GEQ = r'<='
+t_GEQ = r'>='
 t_LT = r'<'
 t_GT = r'>'
 t_AND = r'&&'
@@ -69,8 +69,7 @@ t_ignore = " \t"
 def t_newline(t):
     r'\n+'
     t.lexer.lineno += t.value.count("\n")
-    
+
 def t_error(t):
     print("Illegal character '%s', skipped" % t.value[0])
     t.lexer.skip(1)
-    

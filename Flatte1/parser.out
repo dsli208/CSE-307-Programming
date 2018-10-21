@@ -1,0 +1,2144 @@
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Grammar
+
+Rule 0     S' -> statement
+Rule 1     statement -> expression
+Rule 2     expression -> expression PLUS expression
+Rule 3     expression -> expression MINUS expression
+Rule 4     expression -> expression TIMES expression
+Rule 5     expression -> expression DIVIDE expression
+Rule 6     expression -> expression MOD expression
+Rule 7     expression -> expression EQUALS expression
+Rule 8     expression -> expression LEQ expression
+Rule 9     expression -> expression LT expression
+Rule 10    expression -> expression GEQ expression
+Rule 11    expression -> expression GT expression
+Rule 12    expression -> expression AND expression
+Rule 13    expression -> expression OR expression
+Rule 14    expression -> expression NOTEQUALS expression
+Rule 15    expression -> MINUS expression
+Rule 16    expression -> NOT expression
+Rule 17    expression -> LET NAME EQUALS expression IN expression
+Rule 18    expression -> IF expression THEN expression ELSE expression
+Rule 19    expression -> basicexpression
+Rule 20    basicexpression -> LPAREN expression RPAREN
+Rule 21    basicexpression -> TRUE
+Rule 22    basicexpression -> FALSE
+Rule 23    basicexpression -> NUMBER
+Rule 24    basicexpression -> NAME
+
+Terminals, with rules where they appear
+
+AND                  : 12
+DIVIDE               : 5
+ELSE                 : 18
+EQUALS               : 7 17
+FALSE                : 22
+GEQ                  : 10
+GT                   : 11
+IF                   : 18
+IN                   : 17
+LEQ                  : 8
+LET                  : 17
+LPAREN               : 20
+LT                   : 9
+MINUS                : 3 15
+MOD                  : 6
+NAME                 : 17 24
+NOT                  : 16
+NOTEQUALS            : 14
+NUMBER               : 23
+OR                   : 13
+PLUS                 : 2
+RPAREN               : 20
+THEN                 : 18
+TIMES                : 4
+TRUE                 : 21
+error                : 
+
+Nonterminals, with rules where they appear
+
+basicexpression      : 19
+expression           : 1 2 2 3 3 4 4 5 5 6 6 7 7 8 8 9 9 10 10 11 11 12 12 13 13 14 14 15 16 17 17 18 18 18 20
+statement            : 0
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . statement
+    (1) statement -> . expression
+    (2) expression -> . expression PLUS expression
+    (3) expression -> . expression MINUS expression
+    (4) expression -> . expression TIMES expression
+    (5) expression -> . expression DIVIDE expression
+    (6) expression -> . expression MOD expression
+    (7) expression -> . expression EQUALS expression
+    (8) expression -> . expression LEQ expression
+    (9) expression -> . expression LT expression
+    (10) expression -> . expression GEQ expression
+    (11) expression -> . expression GT expression
+    (12) expression -> . expression AND expression
+    (13) expression -> . expression OR expression
+    (14) expression -> . expression NOTEQUALS expression
+    (15) expression -> . MINUS expression
+    (16) expression -> . NOT expression
+    (17) expression -> . LET NAME EQUALS expression IN expression
+    (18) expression -> . IF expression THEN expression ELSE expression
+    (19) expression -> . basicexpression
+    (20) basicexpression -> . LPAREN expression RPAREN
+    (21) basicexpression -> . TRUE
+    (22) basicexpression -> . FALSE
+    (23) basicexpression -> . NUMBER
+    (24) basicexpression -> . NAME
+
+    MINUS           shift and go to state 4
+    NOT             shift and go to state 11
+    LET             shift and go to state 10
+    IF              shift and go to state 7
+    LPAREN          shift and go to state 6
+    TRUE            shift and go to state 3
+    FALSE           shift and go to state 8
+    NUMBER          shift and go to state 1
+    NAME            shift and go to state 9
+
+    basicexpression                shift and go to state 2
+    expression                     shift and go to state 12
+    statement                      shift and go to state 5
+
+state 1
+
+    (23) basicexpression -> NUMBER .
+
+    PLUS            reduce using rule 23 (basicexpression -> NUMBER .)
+    MINUS           reduce using rule 23 (basicexpression -> NUMBER .)
+    TIMES           reduce using rule 23 (basicexpression -> NUMBER .)
+    DIVIDE          reduce using rule 23 (basicexpression -> NUMBER .)
+    MOD             reduce using rule 23 (basicexpression -> NUMBER .)
+    EQUALS          reduce using rule 23 (basicexpression -> NUMBER .)
+    LEQ             reduce using rule 23 (basicexpression -> NUMBER .)
+    LT              reduce using rule 23 (basicexpression -> NUMBER .)
+    GEQ             reduce using rule 23 (basicexpression -> NUMBER .)
+    GT              reduce using rule 23 (basicexpression -> NUMBER .)
+    AND             reduce using rule 23 (basicexpression -> NUMBER .)
+    OR              reduce using rule 23 (basicexpression -> NUMBER .)
+    NOTEQUALS       reduce using rule 23 (basicexpression -> NUMBER .)
+    $end            reduce using rule 23 (basicexpression -> NUMBER .)
+    RPAREN          reduce using rule 23 (basicexpression -> NUMBER .)
+    THEN            reduce using rule 23 (basicexpression -> NUMBER .)
+    ELSE            reduce using rule 23 (basicexpression -> NUMBER .)
+    IN              reduce using rule 23 (basicexpression -> NUMBER .)
+
+
+state 2
+
+    (19) expression -> basicexpression .
+
+    PLUS            reduce using rule 19 (expression -> basicexpression .)
+    MINUS           reduce using rule 19 (expression -> basicexpression .)
+    TIMES           reduce using rule 19 (expression -> basicexpression .)
+    DIVIDE          reduce using rule 19 (expression -> basicexpression .)
+    MOD             reduce using rule 19 (expression -> basicexpression .)
+    EQUALS          reduce using rule 19 (expression -> basicexpression .)
+    LEQ             reduce using rule 19 (expression -> basicexpression .)
+    LT              reduce using rule 19 (expression -> basicexpression .)
+    GEQ             reduce using rule 19 (expression -> basicexpression .)
+    GT              reduce using rule 19 (expression -> basicexpression .)
+    AND             reduce using rule 19 (expression -> basicexpression .)
+    OR              reduce using rule 19 (expression -> basicexpression .)
+    NOTEQUALS       reduce using rule 19 (expression -> basicexpression .)
+    $end            reduce using rule 19 (expression -> basicexpression .)
+    RPAREN          reduce using rule 19 (expression -> basicexpression .)
+    THEN            reduce using rule 19 (expression -> basicexpression .)
+    ELSE            reduce using rule 19 (expression -> basicexpression .)
+    IN              reduce using rule 19 (expression -> basicexpression .)
+
+
+state 3
+
+    (21) basicexpression -> TRUE .
+
+    PLUS            reduce using rule 21 (basicexpression -> TRUE .)
+    MINUS           reduce using rule 21 (basicexpression -> TRUE .)
+    TIMES           reduce using rule 21 (basicexpression -> TRUE .)
+    DIVIDE          reduce using rule 21 (basicexpression -> TRUE .)
+    MOD             reduce using rule 21 (basicexpression -> TRUE .)
+    EQUALS          reduce using rule 21 (basicexpression -> TRUE .)
+    LEQ             reduce using rule 21 (basicexpression -> TRUE .)
+    LT              reduce using rule 21 (basicexpression -> TRUE .)
+    GEQ             reduce using rule 21 (basicexpression -> TRUE .)
+    GT              reduce using rule 21 (basicexpression -> TRUE .)
+    AND             reduce using rule 21 (basicexpression -> TRUE .)
+    OR              reduce using rule 21 (basicexpression -> TRUE .)
+    NOTEQUALS       reduce using rule 21 (basicexpression -> TRUE .)
+    $end            reduce using rule 21 (basicexpression -> TRUE .)
+    RPAREN          reduce using rule 21 (basicexpression -> TRUE .)
+    THEN            reduce using rule 21 (basicexpression -> TRUE .)
+    ELSE            reduce using rule 21 (basicexpression -> TRUE .)
+    IN              reduce using rule 21 (basicexpression -> TRUE .)
+
+
+state 4
+
+    (15) expression -> MINUS . expression
+    (2) expression -> . expression PLUS expression
+    (3) expression -> . expression MINUS expression
+    (4) expression -> . expression TIMES expression
+    (5) expression -> . expression DIVIDE expression
+    (6) expression -> . expression MOD expression
+    (7) expression -> . expression EQUALS expression
+    (8) expression -> . expression LEQ expression
+    (9) expression -> . expression LT expression
+    (10) expression -> . expression GEQ expression
+    (11) expression -> . expression GT expression
+    (12) expression -> . expression AND expression
+    (13) expression -> . expression OR expression
+    (14) expression -> . expression NOTEQUALS expression
+    (15) expression -> . MINUS expression
+    (16) expression -> . NOT expression
+    (17) expression -> . LET NAME EQUALS expression IN expression
+    (18) expression -> . IF expression THEN expression ELSE expression
+    (19) expression -> . basicexpression
+    (20) basicexpression -> . LPAREN expression RPAREN
+    (21) basicexpression -> . TRUE
+    (22) basicexpression -> . FALSE
+    (23) basicexpression -> . NUMBER
+    (24) basicexpression -> . NAME
+
+    MINUS           shift and go to state 4
+    NOT             shift and go to state 11
+    LET             shift and go to state 10
+    IF              shift and go to state 7
+    LPAREN          shift and go to state 6
+    TRUE            shift and go to state 3
+    FALSE           shift and go to state 8
+    NUMBER          shift and go to state 1
+    NAME            shift and go to state 9
+
+    basicexpression                shift and go to state 2
+    expression                     shift and go to state 13
+
+state 5
+
+    (0) S' -> statement .
+
+
+
+state 6
+
+    (20) basicexpression -> LPAREN . expression RPAREN
+    (2) expression -> . expression PLUS expression
+    (3) expression -> . expression MINUS expression
+    (4) expression -> . expression TIMES expression
+    (5) expression -> . expression DIVIDE expression
+    (6) expression -> . expression MOD expression
+    (7) expression -> . expression EQUALS expression
+    (8) expression -> . expression LEQ expression
+    (9) expression -> . expression LT expression
+    (10) expression -> . expression GEQ expression
+    (11) expression -> . expression GT expression
+    (12) expression -> . expression AND expression
+    (13) expression -> . expression OR expression
+    (14) expression -> . expression NOTEQUALS expression
+    (15) expression -> . MINUS expression
+    (16) expression -> . NOT expression
+    (17) expression -> . LET NAME EQUALS expression IN expression
+    (18) expression -> . IF expression THEN expression ELSE expression
+    (19) expression -> . basicexpression
+    (20) basicexpression -> . LPAREN expression RPAREN
+    (21) basicexpression -> . TRUE
+    (22) basicexpression -> . FALSE
+    (23) basicexpression -> . NUMBER
+    (24) basicexpression -> . NAME
+
+    MINUS           shift and go to state 4
+    NOT             shift and go to state 11
+    LET             shift and go to state 10
+    IF              shift and go to state 7
+    LPAREN          shift and go to state 6
+    TRUE            shift and go to state 3
+    FALSE           shift and go to state 8
+    NUMBER          shift and go to state 1
+    NAME            shift and go to state 9
+
+    basicexpression                shift and go to state 2
+    expression                     shift and go to state 14
+
+state 7
+
+    (18) expression -> IF . expression THEN expression ELSE expression
+    (2) expression -> . expression PLUS expression
+    (3) expression -> . expression MINUS expression
+    (4) expression -> . expression TIMES expression
+    (5) expression -> . expression DIVIDE expression
+    (6) expression -> . expression MOD expression
+    (7) expression -> . expression EQUALS expression
+    (8) expression -> . expression LEQ expression
+    (9) expression -> . expression LT expression
+    (10) expression -> . expression GEQ expression
+    (11) expression -> . expression GT expression
+    (12) expression -> . expression AND expression
+    (13) expression -> . expression OR expression
+    (14) expression -> . expression NOTEQUALS expression
+    (15) expression -> . MINUS expression
+    (16) expression -> . NOT expression
+    (17) expression -> . LET NAME EQUALS expression IN expression
+    (18) expression -> . IF expression THEN expression ELSE expression
+    (19) expression -> . basicexpression
+    (20) basicexpression -> . LPAREN expression RPAREN
+    (21) basicexpression -> . TRUE
+    (22) basicexpression -> . FALSE
+    (23) basicexpression -> . NUMBER
+    (24) basicexpression -> . NAME
+
+    MINUS           shift and go to state 4
+    NOT             shift and go to state 11
+    LET             shift and go to state 10
+    IF              shift and go to state 7
+    LPAREN          shift and go to state 6
+    TRUE            shift and go to state 3
+    FALSE           shift and go to state 8
+    NUMBER          shift and go to state 1
+    NAME            shift and go to state 9
+
+    basicexpression                shift and go to state 2
+    expression                     shift and go to state 15
+
+state 8
+
+    (22) basicexpression -> FALSE .
+
+    PLUS            reduce using rule 22 (basicexpression -> FALSE .)
+    MINUS           reduce using rule 22 (basicexpression -> FALSE .)
+    TIMES           reduce using rule 22 (basicexpression -> FALSE .)
+    DIVIDE          reduce using rule 22 (basicexpression -> FALSE .)
+    MOD             reduce using rule 22 (basicexpression -> FALSE .)
+    EQUALS          reduce using rule 22 (basicexpression -> FALSE .)
+    LEQ             reduce using rule 22 (basicexpression -> FALSE .)
+    LT              reduce using rule 22 (basicexpression -> FALSE .)
+    GEQ             reduce using rule 22 (basicexpression -> FALSE .)
+    GT              reduce using rule 22 (basicexpression -> FALSE .)
+    AND             reduce using rule 22 (basicexpression -> FALSE .)
+    OR              reduce using rule 22 (basicexpression -> FALSE .)
+    NOTEQUALS       reduce using rule 22 (basicexpression -> FALSE .)
+    $end            reduce using rule 22 (basicexpression -> FALSE .)
+    RPAREN          reduce using rule 22 (basicexpression -> FALSE .)
+    THEN            reduce using rule 22 (basicexpression -> FALSE .)
+    ELSE            reduce using rule 22 (basicexpression -> FALSE .)
+    IN              reduce using rule 22 (basicexpression -> FALSE .)
+
+
+state 9
+
+    (24) basicexpression -> NAME .
+
+    PLUS            reduce using rule 24 (basicexpression -> NAME .)
+    MINUS           reduce using rule 24 (basicexpression -> NAME .)
+    TIMES           reduce using rule 24 (basicexpression -> NAME .)
+    DIVIDE          reduce using rule 24 (basicexpression -> NAME .)
+    MOD             reduce using rule 24 (basicexpression -> NAME .)
+    EQUALS          reduce using rule 24 (basicexpression -> NAME .)
+    LEQ             reduce using rule 24 (basicexpression -> NAME .)
+    LT              reduce using rule 24 (basicexpression -> NAME .)
+    GEQ             reduce using rule 24 (basicexpression -> NAME .)
+    GT              reduce using rule 24 (basicexpression -> NAME .)
+    AND             reduce using rule 24 (basicexpression -> NAME .)
+    OR              reduce using rule 24 (basicexpression -> NAME .)
+    NOTEQUALS       reduce using rule 24 (basicexpression -> NAME .)
+    $end            reduce using rule 24 (basicexpression -> NAME .)
+    RPAREN          reduce using rule 24 (basicexpression -> NAME .)
+    THEN            reduce using rule 24 (basicexpression -> NAME .)
+    ELSE            reduce using rule 24 (basicexpression -> NAME .)
+    IN              reduce using rule 24 (basicexpression -> NAME .)
+
+
+state 10
+
+    (17) expression -> LET . NAME EQUALS expression IN expression
+
+    NAME            shift and go to state 16
+
+
+state 11
+
+    (16) expression -> NOT . expression
+    (2) expression -> . expression PLUS expression
+    (3) expression -> . expression MINUS expression
+    (4) expression -> . expression TIMES expression
+    (5) expression -> . expression DIVIDE expression
+    (6) expression -> . expression MOD expression
+    (7) expression -> . expression EQUALS expression
+    (8) expression -> . expression LEQ expression
+    (9) expression -> . expression LT expression
+    (10) expression -> . expression GEQ expression
+    (11) expression -> . expression GT expression
+    (12) expression -> . expression AND expression
+    (13) expression -> . expression OR expression
+    (14) expression -> . expression NOTEQUALS expression
+    (15) expression -> . MINUS expression
+    (16) expression -> . NOT expression
+    (17) expression -> . LET NAME EQUALS expression IN expression
+    (18) expression -> . IF expression THEN expression ELSE expression
+    (19) expression -> . basicexpression
+    (20) basicexpression -> . LPAREN expression RPAREN
+    (21) basicexpression -> . TRUE
+    (22) basicexpression -> . FALSE
+    (23) basicexpression -> . NUMBER
+    (24) basicexpression -> . NAME
+
+    MINUS           shift and go to state 4
+    NOT             shift and go to state 11
+    LET             shift and go to state 10
+    IF              shift and go to state 7
+    LPAREN          shift and go to state 6
+    TRUE            shift and go to state 3
+    FALSE           shift and go to state 8
+    NUMBER          shift and go to state 1
+    NAME            shift and go to state 9
+
+    basicexpression                shift and go to state 2
+    expression                     shift and go to state 17
+
+state 12
+
+    (1) statement -> expression .
+    (2) expression -> expression . PLUS expression
+    (3) expression -> expression . MINUS expression
+    (4) expression -> expression . TIMES expression
+    (5) expression -> expression . DIVIDE expression
+    (6) expression -> expression . MOD expression
+    (7) expression -> expression . EQUALS expression
+    (8) expression -> expression . LEQ expression
+    (9) expression -> expression . LT expression
+    (10) expression -> expression . GEQ expression
+    (11) expression -> expression . GT expression
+    (12) expression -> expression . AND expression
+    (13) expression -> expression . OR expression
+    (14) expression -> expression . NOTEQUALS expression
+
+    $end            reduce using rule 1 (statement -> expression .)
+    PLUS            shift and go to state 28
+    MINUS           shift and go to state 29
+    TIMES           shift and go to state 25
+    DIVIDE          shift and go to state 22
+    MOD             shift and go to state 30
+    EQUALS          shift and go to state 24
+    LEQ             shift and go to state 26
+    LT              shift and go to state 27
+    GEQ             shift and go to state 20
+    GT              shift and go to state 21
+    AND             shift and go to state 18
+    OR              shift and go to state 19
+    NOTEQUALS       shift and go to state 23
+
+
+state 13
+
+    (15) expression -> MINUS expression .
+    (2) expression -> expression . PLUS expression
+    (3) expression -> expression . MINUS expression
+    (4) expression -> expression . TIMES expression
+    (5) expression -> expression . DIVIDE expression
+    (6) expression -> expression . MOD expression
+    (7) expression -> expression . EQUALS expression
+    (8) expression -> expression . LEQ expression
+    (9) expression -> expression . LT expression
+    (10) expression -> expression . GEQ expression
+    (11) expression -> expression . GT expression
+    (12) expression -> expression . AND expression
+    (13) expression -> expression . OR expression
+    (14) expression -> expression . NOTEQUALS expression
+
+    PLUS            reduce using rule 15 (expression -> MINUS expression .)
+    MINUS           reduce using rule 15 (expression -> MINUS expression .)
+    TIMES           reduce using rule 15 (expression -> MINUS expression .)
+    DIVIDE          reduce using rule 15 (expression -> MINUS expression .)
+    MOD             reduce using rule 15 (expression -> MINUS expression .)
+    EQUALS          reduce using rule 15 (expression -> MINUS expression .)
+    LEQ             reduce using rule 15 (expression -> MINUS expression .)
+    LT              reduce using rule 15 (expression -> MINUS expression .)
+    GEQ             reduce using rule 15 (expression -> MINUS expression .)
+    GT              reduce using rule 15 (expression -> MINUS expression .)
+    AND             reduce using rule 15 (expression -> MINUS expression .)
+    OR              reduce using rule 15 (expression -> MINUS expression .)
+    NOTEQUALS       reduce using rule 15 (expression -> MINUS expression .)
+    $end            reduce using rule 15 (expression -> MINUS expression .)
+    RPAREN          reduce using rule 15 (expression -> MINUS expression .)
+    THEN            reduce using rule 15 (expression -> MINUS expression .)
+    ELSE            reduce using rule 15 (expression -> MINUS expression .)
+    IN              reduce using rule 15 (expression -> MINUS expression .)
+
+  ! PLUS            [ shift and go to state 28 ]
+  ! MINUS           [ shift and go to state 29 ]
+  ! TIMES           [ shift and go to state 25 ]
+  ! DIVIDE          [ shift and go to state 22 ]
+  ! MOD             [ shift and go to state 30 ]
+  ! EQUALS          [ shift and go to state 24 ]
+  ! LEQ             [ shift and go to state 26 ]
+  ! LT              [ shift and go to state 27 ]
+  ! GEQ             [ shift and go to state 20 ]
+  ! GT              [ shift and go to state 21 ]
+  ! AND             [ shift and go to state 18 ]
+  ! OR              [ shift and go to state 19 ]
+  ! NOTEQUALS       [ shift and go to state 23 ]
+
+
+state 14
+
+    (20) basicexpression -> LPAREN expression . RPAREN
+    (2) expression -> expression . PLUS expression
+    (3) expression -> expression . MINUS expression
+    (4) expression -> expression . TIMES expression
+    (5) expression -> expression . DIVIDE expression
+    (6) expression -> expression . MOD expression
+    (7) expression -> expression . EQUALS expression
+    (8) expression -> expression . LEQ expression
+    (9) expression -> expression . LT expression
+    (10) expression -> expression . GEQ expression
+    (11) expression -> expression . GT expression
+    (12) expression -> expression . AND expression
+    (13) expression -> expression . OR expression
+    (14) expression -> expression . NOTEQUALS expression
+
+    RPAREN          shift and go to state 31
+    PLUS            shift and go to state 28
+    MINUS           shift and go to state 29
+    TIMES           shift and go to state 25
+    DIVIDE          shift and go to state 22
+    MOD             shift and go to state 30
+    EQUALS          shift and go to state 24
+    LEQ             shift and go to state 26
+    LT              shift and go to state 27
+    GEQ             shift and go to state 20
+    GT              shift and go to state 21
+    AND             shift and go to state 18
+    OR              shift and go to state 19
+    NOTEQUALS       shift and go to state 23
+
+
+state 15
+
+    (18) expression -> IF expression . THEN expression ELSE expression
+    (2) expression -> expression . PLUS expression
+    (3) expression -> expression . MINUS expression
+    (4) expression -> expression . TIMES expression
+    (5) expression -> expression . DIVIDE expression
+    (6) expression -> expression . MOD expression
+    (7) expression -> expression . EQUALS expression
+    (8) expression -> expression . LEQ expression
+    (9) expression -> expression . LT expression
+    (10) expression -> expression . GEQ expression
+    (11) expression -> expression . GT expression
+    (12) expression -> expression . AND expression
+    (13) expression -> expression . OR expression
+    (14) expression -> expression . NOTEQUALS expression
+
+    THEN            shift and go to state 32
+    PLUS            shift and go to state 28
+    MINUS           shift and go to state 29
+    TIMES           shift and go to state 25
+    DIVIDE          shift and go to state 22
+    MOD             shift and go to state 30
+    EQUALS          shift and go to state 24
+    LEQ             shift and go to state 26
+    LT              shift and go to state 27
+    GEQ             shift and go to state 20
+    GT              shift and go to state 21
+    AND             shift and go to state 18
+    OR              shift and go to state 19
+    NOTEQUALS       shift and go to state 23
+
+
+state 16
+
+    (17) expression -> LET NAME . EQUALS expression IN expression
+
+    EQUALS          shift and go to state 33
+
+
+state 17
+
+    (16) expression -> NOT expression .
+    (2) expression -> expression . PLUS expression
+    (3) expression -> expression . MINUS expression
+    (4) expression -> expression . TIMES expression
+    (5) expression -> expression . DIVIDE expression
+    (6) expression -> expression . MOD expression
+    (7) expression -> expression . EQUALS expression
+    (8) expression -> expression . LEQ expression
+    (9) expression -> expression . LT expression
+    (10) expression -> expression . GEQ expression
+    (11) expression -> expression . GT expression
+    (12) expression -> expression . AND expression
+    (13) expression -> expression . OR expression
+    (14) expression -> expression . NOTEQUALS expression
+
+    PLUS            reduce using rule 16 (expression -> NOT expression .)
+    MINUS           reduce using rule 16 (expression -> NOT expression .)
+    TIMES           reduce using rule 16 (expression -> NOT expression .)
+    DIVIDE          reduce using rule 16 (expression -> NOT expression .)
+    MOD             reduce using rule 16 (expression -> NOT expression .)
+    EQUALS          reduce using rule 16 (expression -> NOT expression .)
+    LEQ             reduce using rule 16 (expression -> NOT expression .)
+    LT              reduce using rule 16 (expression -> NOT expression .)
+    GEQ             reduce using rule 16 (expression -> NOT expression .)
+    GT              reduce using rule 16 (expression -> NOT expression .)
+    AND             reduce using rule 16 (expression -> NOT expression .)
+    OR              reduce using rule 16 (expression -> NOT expression .)
+    NOTEQUALS       reduce using rule 16 (expression -> NOT expression .)
+    $end            reduce using rule 16 (expression -> NOT expression .)
+    RPAREN          reduce using rule 16 (expression -> NOT expression .)
+    THEN            reduce using rule 16 (expression -> NOT expression .)
+    ELSE            reduce using rule 16 (expression -> NOT expression .)
+    IN              reduce using rule 16 (expression -> NOT expression .)
+
+  ! PLUS            [ shift and go to state 28 ]
+  ! MINUS           [ shift and go to state 29 ]
+  ! TIMES           [ shift and go to state 25 ]
+  ! DIVIDE          [ shift and go to state 22 ]
+  ! MOD             [ shift and go to state 30 ]
+  ! EQUALS          [ shift and go to state 24 ]
+  ! LEQ             [ shift and go to state 26 ]
+  ! LT              [ shift and go to state 27 ]
+  ! GEQ             [ shift and go to state 20 ]
+  ! GT              [ shift and go to state 21 ]
+  ! AND             [ shift and go to state 18 ]
+  ! OR              [ shift and go to state 19 ]
+  ! NOTEQUALS       [ shift and go to state 23 ]
+
+
+state 18
+
+    (12) expression -> expression AND . expression
+    (2) expression -> . expression PLUS expression
+    (3) expression -> . expression MINUS expression
+    (4) expression -> . expression TIMES expression
+    (5) expression -> . expression DIVIDE expression
+    (6) expression -> . expression MOD expression
+    (7) expression -> . expression EQUALS expression
+    (8) expression -> . expression LEQ expression
+    (9) expression -> . expression LT expression
+    (10) expression -> . expression GEQ expression
+    (11) expression -> . expression GT expression
+    (12) expression -> . expression AND expression
+    (13) expression -> . expression OR expression
+    (14) expression -> . expression NOTEQUALS expression
+    (15) expression -> . MINUS expression
+    (16) expression -> . NOT expression
+    (17) expression -> . LET NAME EQUALS expression IN expression
+    (18) expression -> . IF expression THEN expression ELSE expression
+    (19) expression -> . basicexpression
+    (20) basicexpression -> . LPAREN expression RPAREN
+    (21) basicexpression -> . TRUE
+    (22) basicexpression -> . FALSE
+    (23) basicexpression -> . NUMBER
+    (24) basicexpression -> . NAME
+
+    MINUS           shift and go to state 4
+    NOT             shift and go to state 11
+    LET             shift and go to state 10
+    IF              shift and go to state 7
+    LPAREN          shift and go to state 6
+    TRUE            shift and go to state 3
+    FALSE           shift and go to state 8
+    NUMBER          shift and go to state 1
+    NAME            shift and go to state 9
+
+    basicexpression                shift and go to state 2
+    expression                     shift and go to state 34
+
+state 19
+
+    (13) expression -> expression OR . expression
+    (2) expression -> . expression PLUS expression
+    (3) expression -> . expression MINUS expression
+    (4) expression -> . expression TIMES expression
+    (5) expression -> . expression DIVIDE expression
+    (6) expression -> . expression MOD expression
+    (7) expression -> . expression EQUALS expression
+    (8) expression -> . expression LEQ expression
+    (9) expression -> . expression LT expression
+    (10) expression -> . expression GEQ expression
+    (11) expression -> . expression GT expression
+    (12) expression -> . expression AND expression
+    (13) expression -> . expression OR expression
+    (14) expression -> . expression NOTEQUALS expression
+    (15) expression -> . MINUS expression
+    (16) expression -> . NOT expression
+    (17) expression -> . LET NAME EQUALS expression IN expression
+    (18) expression -> . IF expression THEN expression ELSE expression
+    (19) expression -> . basicexpression
+    (20) basicexpression -> . LPAREN expression RPAREN
+    (21) basicexpression -> . TRUE
+    (22) basicexpression -> . FALSE
+    (23) basicexpression -> . NUMBER
+    (24) basicexpression -> . NAME
+
+    MINUS           shift and go to state 4
+    NOT             shift and go to state 11
+    LET             shift and go to state 10
+    IF              shift and go to state 7
+    LPAREN          shift and go to state 6
+    TRUE            shift and go to state 3
+    FALSE           shift and go to state 8
+    NUMBER          shift and go to state 1
+    NAME            shift and go to state 9
+
+    basicexpression                shift and go to state 2
+    expression                     shift and go to state 35
+
+state 20
+
+    (10) expression -> expression GEQ . expression
+    (2) expression -> . expression PLUS expression
+    (3) expression -> . expression MINUS expression
+    (4) expression -> . expression TIMES expression
+    (5) expression -> . expression DIVIDE expression
+    (6) expression -> . expression MOD expression
+    (7) expression -> . expression EQUALS expression
+    (8) expression -> . expression LEQ expression
+    (9) expression -> . expression LT expression
+    (10) expression -> . expression GEQ expression
+    (11) expression -> . expression GT expression
+    (12) expression -> . expression AND expression
+    (13) expression -> . expression OR expression
+    (14) expression -> . expression NOTEQUALS expression
+    (15) expression -> . MINUS expression
+    (16) expression -> . NOT expression
+    (17) expression -> . LET NAME EQUALS expression IN expression
+    (18) expression -> . IF expression THEN expression ELSE expression
+    (19) expression -> . basicexpression
+    (20) basicexpression -> . LPAREN expression RPAREN
+    (21) basicexpression -> . TRUE
+    (22) basicexpression -> . FALSE
+    (23) basicexpression -> . NUMBER
+    (24) basicexpression -> . NAME
+
+    MINUS           shift and go to state 4
+    NOT             shift and go to state 11
+    LET             shift and go to state 10
+    IF              shift and go to state 7
+    LPAREN          shift and go to state 6
+    TRUE            shift and go to state 3
+    FALSE           shift and go to state 8
+    NUMBER          shift and go to state 1
+    NAME            shift and go to state 9
+
+    basicexpression                shift and go to state 2
+    expression                     shift and go to state 36
+
+state 21
+
+    (11) expression -> expression GT . expression
+    (2) expression -> . expression PLUS expression
+    (3) expression -> . expression MINUS expression
+    (4) expression -> . expression TIMES expression
+    (5) expression -> . expression DIVIDE expression
+    (6) expression -> . expression MOD expression
+    (7) expression -> . expression EQUALS expression
+    (8) expression -> . expression LEQ expression
+    (9) expression -> . expression LT expression
+    (10) expression -> . expression GEQ expression
+    (11) expression -> . expression GT expression
+    (12) expression -> . expression AND expression
+    (13) expression -> . expression OR expression
+    (14) expression -> . expression NOTEQUALS expression
+    (15) expression -> . MINUS expression
+    (16) expression -> . NOT expression
+    (17) expression -> . LET NAME EQUALS expression IN expression
+    (18) expression -> . IF expression THEN expression ELSE expression
+    (19) expression -> . basicexpression
+    (20) basicexpression -> . LPAREN expression RPAREN
+    (21) basicexpression -> . TRUE
+    (22) basicexpression -> . FALSE
+    (23) basicexpression -> . NUMBER
+    (24) basicexpression -> . NAME
+
+    MINUS           shift and go to state 4
+    NOT             shift and go to state 11
+    LET             shift and go to state 10
+    IF              shift and go to state 7
+    LPAREN          shift and go to state 6
+    TRUE            shift and go to state 3
+    FALSE           shift and go to state 8
+    NUMBER          shift and go to state 1
+    NAME            shift and go to state 9
+
+    basicexpression                shift and go to state 2
+    expression                     shift and go to state 37
+
+state 22
+
+    (5) expression -> expression DIVIDE . expression
+    (2) expression -> . expression PLUS expression
+    (3) expression -> . expression MINUS expression
+    (4) expression -> . expression TIMES expression
+    (5) expression -> . expression DIVIDE expression
+    (6) expression -> . expression MOD expression
+    (7) expression -> . expression EQUALS expression
+    (8) expression -> . expression LEQ expression
+    (9) expression -> . expression LT expression
+    (10) expression -> . expression GEQ expression
+    (11) expression -> . expression GT expression
+    (12) expression -> . expression AND expression
+    (13) expression -> . expression OR expression
+    (14) expression -> . expression NOTEQUALS expression
+    (15) expression -> . MINUS expression
+    (16) expression -> . NOT expression
+    (17) expression -> . LET NAME EQUALS expression IN expression
+    (18) expression -> . IF expression THEN expression ELSE expression
+    (19) expression -> . basicexpression
+    (20) basicexpression -> . LPAREN expression RPAREN
+    (21) basicexpression -> . TRUE
+    (22) basicexpression -> . FALSE
+    (23) basicexpression -> . NUMBER
+    (24) basicexpression -> . NAME
+
+    MINUS           shift and go to state 4
+    NOT             shift and go to state 11
+    LET             shift and go to state 10
+    IF              shift and go to state 7
+    LPAREN          shift and go to state 6
+    TRUE            shift and go to state 3
+    FALSE           shift and go to state 8
+    NUMBER          shift and go to state 1
+    NAME            shift and go to state 9
+
+    basicexpression                shift and go to state 2
+    expression                     shift and go to state 38
+
+state 23
+
+    (14) expression -> expression NOTEQUALS . expression
+    (2) expression -> . expression PLUS expression
+    (3) expression -> . expression MINUS expression
+    (4) expression -> . expression TIMES expression
+    (5) expression -> . expression DIVIDE expression
+    (6) expression -> . expression MOD expression
+    (7) expression -> . expression EQUALS expression
+    (8) expression -> . expression LEQ expression
+    (9) expression -> . expression LT expression
+    (10) expression -> . expression GEQ expression
+    (11) expression -> . expression GT expression
+    (12) expression -> . expression AND expression
+    (13) expression -> . expression OR expression
+    (14) expression -> . expression NOTEQUALS expression
+    (15) expression -> . MINUS expression
+    (16) expression -> . NOT expression
+    (17) expression -> . LET NAME EQUALS expression IN expression
+    (18) expression -> . IF expression THEN expression ELSE expression
+    (19) expression -> . basicexpression
+    (20) basicexpression -> . LPAREN expression RPAREN
+    (21) basicexpression -> . TRUE
+    (22) basicexpression -> . FALSE
+    (23) basicexpression -> . NUMBER
+    (24) basicexpression -> . NAME
+
+    MINUS           shift and go to state 4
+    NOT             shift and go to state 11
+    LET             shift and go to state 10
+    IF              shift and go to state 7
+    LPAREN          shift and go to state 6
+    TRUE            shift and go to state 3
+    FALSE           shift and go to state 8
+    NUMBER          shift and go to state 1
+    NAME            shift and go to state 9
+
+    basicexpression                shift and go to state 2
+    expression                     shift and go to state 39
+
+state 24
+
+    (7) expression -> expression EQUALS . expression
+    (2) expression -> . expression PLUS expression
+    (3) expression -> . expression MINUS expression
+    (4) expression -> . expression TIMES expression
+    (5) expression -> . expression DIVIDE expression
+    (6) expression -> . expression MOD expression
+    (7) expression -> . expression EQUALS expression
+    (8) expression -> . expression LEQ expression
+    (9) expression -> . expression LT expression
+    (10) expression -> . expression GEQ expression
+    (11) expression -> . expression GT expression
+    (12) expression -> . expression AND expression
+    (13) expression -> . expression OR expression
+    (14) expression -> . expression NOTEQUALS expression
+    (15) expression -> . MINUS expression
+    (16) expression -> . NOT expression
+    (17) expression -> . LET NAME EQUALS expression IN expression
+    (18) expression -> . IF expression THEN expression ELSE expression
+    (19) expression -> . basicexpression
+    (20) basicexpression -> . LPAREN expression RPAREN
+    (21) basicexpression -> . TRUE
+    (22) basicexpression -> . FALSE
+    (23) basicexpression -> . NUMBER
+    (24) basicexpression -> . NAME
+
+    MINUS           shift and go to state 4
+    NOT             shift and go to state 11
+    LET             shift and go to state 10
+    IF              shift and go to state 7
+    LPAREN          shift and go to state 6
+    TRUE            shift and go to state 3
+    FALSE           shift and go to state 8
+    NUMBER          shift and go to state 1
+    NAME            shift and go to state 9
+
+    basicexpression                shift and go to state 2
+    expression                     shift and go to state 40
+
+state 25
+
+    (4) expression -> expression TIMES . expression
+    (2) expression -> . expression PLUS expression
+    (3) expression -> . expression MINUS expression
+    (4) expression -> . expression TIMES expression
+    (5) expression -> . expression DIVIDE expression
+    (6) expression -> . expression MOD expression
+    (7) expression -> . expression EQUALS expression
+    (8) expression -> . expression LEQ expression
+    (9) expression -> . expression LT expression
+    (10) expression -> . expression GEQ expression
+    (11) expression -> . expression GT expression
+    (12) expression -> . expression AND expression
+    (13) expression -> . expression OR expression
+    (14) expression -> . expression NOTEQUALS expression
+    (15) expression -> . MINUS expression
+    (16) expression -> . NOT expression
+    (17) expression -> . LET NAME EQUALS expression IN expression
+    (18) expression -> . IF expression THEN expression ELSE expression
+    (19) expression -> . basicexpression
+    (20) basicexpression -> . LPAREN expression RPAREN
+    (21) basicexpression -> . TRUE
+    (22) basicexpression -> . FALSE
+    (23) basicexpression -> . NUMBER
+    (24) basicexpression -> . NAME
+
+    MINUS           shift and go to state 4
+    NOT             shift and go to state 11
+    LET             shift and go to state 10
+    IF              shift and go to state 7
+    LPAREN          shift and go to state 6
+    TRUE            shift and go to state 3
+    FALSE           shift and go to state 8
+    NUMBER          shift and go to state 1
+    NAME            shift and go to state 9
+
+    basicexpression                shift and go to state 2
+    expression                     shift and go to state 41
+
+state 26
+
+    (8) expression -> expression LEQ . expression
+    (2) expression -> . expression PLUS expression
+    (3) expression -> . expression MINUS expression
+    (4) expression -> . expression TIMES expression
+    (5) expression -> . expression DIVIDE expression
+    (6) expression -> . expression MOD expression
+    (7) expression -> . expression EQUALS expression
+    (8) expression -> . expression LEQ expression
+    (9) expression -> . expression LT expression
+    (10) expression -> . expression GEQ expression
+    (11) expression -> . expression GT expression
+    (12) expression -> . expression AND expression
+    (13) expression -> . expression OR expression
+    (14) expression -> . expression NOTEQUALS expression
+    (15) expression -> . MINUS expression
+    (16) expression -> . NOT expression
+    (17) expression -> . LET NAME EQUALS expression IN expression
+    (18) expression -> . IF expression THEN expression ELSE expression
+    (19) expression -> . basicexpression
+    (20) basicexpression -> . LPAREN expression RPAREN
+    (21) basicexpression -> . TRUE
+    (22) basicexpression -> . FALSE
+    (23) basicexpression -> . NUMBER
+    (24) basicexpression -> . NAME
+
+    MINUS           shift and go to state 4
+    NOT             shift and go to state 11
+    LET             shift and go to state 10
+    IF              shift and go to state 7
+    LPAREN          shift and go to state 6
+    TRUE            shift and go to state 3
+    FALSE           shift and go to state 8
+    NUMBER          shift and go to state 1
+    NAME            shift and go to state 9
+
+    basicexpression                shift and go to state 2
+    expression                     shift and go to state 42
+
+state 27
+
+    (9) expression -> expression LT . expression
+    (2) expression -> . expression PLUS expression
+    (3) expression -> . expression MINUS expression
+    (4) expression -> . expression TIMES expression
+    (5) expression -> . expression DIVIDE expression
+    (6) expression -> . expression MOD expression
+    (7) expression -> . expression EQUALS expression
+    (8) expression -> . expression LEQ expression
+    (9) expression -> . expression LT expression
+    (10) expression -> . expression GEQ expression
+    (11) expression -> . expression GT expression
+    (12) expression -> . expression AND expression
+    (13) expression -> . expression OR expression
+    (14) expression -> . expression NOTEQUALS expression
+    (15) expression -> . MINUS expression
+    (16) expression -> . NOT expression
+    (17) expression -> . LET NAME EQUALS expression IN expression
+    (18) expression -> . IF expression THEN expression ELSE expression
+    (19) expression -> . basicexpression
+    (20) basicexpression -> . LPAREN expression RPAREN
+    (21) basicexpression -> . TRUE
+    (22) basicexpression -> . FALSE
+    (23) basicexpression -> . NUMBER
+    (24) basicexpression -> . NAME
+
+    MINUS           shift and go to state 4
+    NOT             shift and go to state 11
+    LET             shift and go to state 10
+    IF              shift and go to state 7
+    LPAREN          shift and go to state 6
+    TRUE            shift and go to state 3
+    FALSE           shift and go to state 8
+    NUMBER          shift and go to state 1
+    NAME            shift and go to state 9
+
+    basicexpression                shift and go to state 2
+    expression                     shift and go to state 43
+
+state 28
+
+    (2) expression -> expression PLUS . expression
+    (2) expression -> . expression PLUS expression
+    (3) expression -> . expression MINUS expression
+    (4) expression -> . expression TIMES expression
+    (5) expression -> . expression DIVIDE expression
+    (6) expression -> . expression MOD expression
+    (7) expression -> . expression EQUALS expression
+    (8) expression -> . expression LEQ expression
+    (9) expression -> . expression LT expression
+    (10) expression -> . expression GEQ expression
+    (11) expression -> . expression GT expression
+    (12) expression -> . expression AND expression
+    (13) expression -> . expression OR expression
+    (14) expression -> . expression NOTEQUALS expression
+    (15) expression -> . MINUS expression
+    (16) expression -> . NOT expression
+    (17) expression -> . LET NAME EQUALS expression IN expression
+    (18) expression -> . IF expression THEN expression ELSE expression
+    (19) expression -> . basicexpression
+    (20) basicexpression -> . LPAREN expression RPAREN
+    (21) basicexpression -> . TRUE
+    (22) basicexpression -> . FALSE
+    (23) basicexpression -> . NUMBER
+    (24) basicexpression -> . NAME
+
+    MINUS           shift and go to state 4
+    NOT             shift and go to state 11
+    LET             shift and go to state 10
+    IF              shift and go to state 7
+    LPAREN          shift and go to state 6
+    TRUE            shift and go to state 3
+    FALSE           shift and go to state 8
+    NUMBER          shift and go to state 1
+    NAME            shift and go to state 9
+
+    basicexpression                shift and go to state 2
+    expression                     shift and go to state 44
+
+state 29
+
+    (3) expression -> expression MINUS . expression
+    (2) expression -> . expression PLUS expression
+    (3) expression -> . expression MINUS expression
+    (4) expression -> . expression TIMES expression
+    (5) expression -> . expression DIVIDE expression
+    (6) expression -> . expression MOD expression
+    (7) expression -> . expression EQUALS expression
+    (8) expression -> . expression LEQ expression
+    (9) expression -> . expression LT expression
+    (10) expression -> . expression GEQ expression
+    (11) expression -> . expression GT expression
+    (12) expression -> . expression AND expression
+    (13) expression -> . expression OR expression
+    (14) expression -> . expression NOTEQUALS expression
+    (15) expression -> . MINUS expression
+    (16) expression -> . NOT expression
+    (17) expression -> . LET NAME EQUALS expression IN expression
+    (18) expression -> . IF expression THEN expression ELSE expression
+    (19) expression -> . basicexpression
+    (20) basicexpression -> . LPAREN expression RPAREN
+    (21) basicexpression -> . TRUE
+    (22) basicexpression -> . FALSE
+    (23) basicexpression -> . NUMBER
+    (24) basicexpression -> . NAME
+
+    MINUS           shift and go to state 4
+    NOT             shift and go to state 11
+    LET             shift and go to state 10
+    IF              shift and go to state 7
+    LPAREN          shift and go to state 6
+    TRUE            shift and go to state 3
+    FALSE           shift and go to state 8
+    NUMBER          shift and go to state 1
+    NAME            shift and go to state 9
+
+    basicexpression                shift and go to state 2
+    expression                     shift and go to state 45
+
+state 30
+
+    (6) expression -> expression MOD . expression
+    (2) expression -> . expression PLUS expression
+    (3) expression -> . expression MINUS expression
+    (4) expression -> . expression TIMES expression
+    (5) expression -> . expression DIVIDE expression
+    (6) expression -> . expression MOD expression
+    (7) expression -> . expression EQUALS expression
+    (8) expression -> . expression LEQ expression
+    (9) expression -> . expression LT expression
+    (10) expression -> . expression GEQ expression
+    (11) expression -> . expression GT expression
+    (12) expression -> . expression AND expression
+    (13) expression -> . expression OR expression
+    (14) expression -> . expression NOTEQUALS expression
+    (15) expression -> . MINUS expression
+    (16) expression -> . NOT expression
+    (17) expression -> . LET NAME EQUALS expression IN expression
+    (18) expression -> . IF expression THEN expression ELSE expression
+    (19) expression -> . basicexpression
+    (20) basicexpression -> . LPAREN expression RPAREN
+    (21) basicexpression -> . TRUE
+    (22) basicexpression -> . FALSE
+    (23) basicexpression -> . NUMBER
+    (24) basicexpression -> . NAME
+
+    MINUS           shift and go to state 4
+    NOT             shift and go to state 11
+    LET             shift and go to state 10
+    IF              shift and go to state 7
+    LPAREN          shift and go to state 6
+    TRUE            shift and go to state 3
+    FALSE           shift and go to state 8
+    NUMBER          shift and go to state 1
+    NAME            shift and go to state 9
+
+    basicexpression                shift and go to state 2
+    expression                     shift and go to state 46
+
+state 31
+
+    (20) basicexpression -> LPAREN expression RPAREN .
+
+    PLUS            reduce using rule 20 (basicexpression -> LPAREN expression RPAREN .)
+    MINUS           reduce using rule 20 (basicexpression -> LPAREN expression RPAREN .)
+    TIMES           reduce using rule 20 (basicexpression -> LPAREN expression RPAREN .)
+    DIVIDE          reduce using rule 20 (basicexpression -> LPAREN expression RPAREN .)
+    MOD             reduce using rule 20 (basicexpression -> LPAREN expression RPAREN .)
+    EQUALS          reduce using rule 20 (basicexpression -> LPAREN expression RPAREN .)
+    LEQ             reduce using rule 20 (basicexpression -> LPAREN expression RPAREN .)
+    LT              reduce using rule 20 (basicexpression -> LPAREN expression RPAREN .)
+    GEQ             reduce using rule 20 (basicexpression -> LPAREN expression RPAREN .)
+    GT              reduce using rule 20 (basicexpression -> LPAREN expression RPAREN .)
+    AND             reduce using rule 20 (basicexpression -> LPAREN expression RPAREN .)
+    OR              reduce using rule 20 (basicexpression -> LPAREN expression RPAREN .)
+    NOTEQUALS       reduce using rule 20 (basicexpression -> LPAREN expression RPAREN .)
+    $end            reduce using rule 20 (basicexpression -> LPAREN expression RPAREN .)
+    RPAREN          reduce using rule 20 (basicexpression -> LPAREN expression RPAREN .)
+    THEN            reduce using rule 20 (basicexpression -> LPAREN expression RPAREN .)
+    ELSE            reduce using rule 20 (basicexpression -> LPAREN expression RPAREN .)
+    IN              reduce using rule 20 (basicexpression -> LPAREN expression RPAREN .)
+
+
+state 32
+
+    (18) expression -> IF expression THEN . expression ELSE expression
+    (2) expression -> . expression PLUS expression
+    (3) expression -> . expression MINUS expression
+    (4) expression -> . expression TIMES expression
+    (5) expression -> . expression DIVIDE expression
+    (6) expression -> . expression MOD expression
+    (7) expression -> . expression EQUALS expression
+    (8) expression -> . expression LEQ expression
+    (9) expression -> . expression LT expression
+    (10) expression -> . expression GEQ expression
+    (11) expression -> . expression GT expression
+    (12) expression -> . expression AND expression
+    (13) expression -> . expression OR expression
+    (14) expression -> . expression NOTEQUALS expression
+    (15) expression -> . MINUS expression
+    (16) expression -> . NOT expression
+    (17) expression -> . LET NAME EQUALS expression IN expression
+    (18) expression -> . IF expression THEN expression ELSE expression
+    (19) expression -> . basicexpression
+    (20) basicexpression -> . LPAREN expression RPAREN
+    (21) basicexpression -> . TRUE
+    (22) basicexpression -> . FALSE
+    (23) basicexpression -> . NUMBER
+    (24) basicexpression -> . NAME
+
+    MINUS           shift and go to state 4
+    NOT             shift and go to state 11
+    LET             shift and go to state 10
+    IF              shift and go to state 7
+    LPAREN          shift and go to state 6
+    TRUE            shift and go to state 3
+    FALSE           shift and go to state 8
+    NUMBER          shift and go to state 1
+    NAME            shift and go to state 9
+
+    basicexpression                shift and go to state 2
+    expression                     shift and go to state 47
+
+state 33
+
+    (17) expression -> LET NAME EQUALS . expression IN expression
+    (2) expression -> . expression PLUS expression
+    (3) expression -> . expression MINUS expression
+    (4) expression -> . expression TIMES expression
+    (5) expression -> . expression DIVIDE expression
+    (6) expression -> . expression MOD expression
+    (7) expression -> . expression EQUALS expression
+    (8) expression -> . expression LEQ expression
+    (9) expression -> . expression LT expression
+    (10) expression -> . expression GEQ expression
+    (11) expression -> . expression GT expression
+    (12) expression -> . expression AND expression
+    (13) expression -> . expression OR expression
+    (14) expression -> . expression NOTEQUALS expression
+    (15) expression -> . MINUS expression
+    (16) expression -> . NOT expression
+    (17) expression -> . LET NAME EQUALS expression IN expression
+    (18) expression -> . IF expression THEN expression ELSE expression
+    (19) expression -> . basicexpression
+    (20) basicexpression -> . LPAREN expression RPAREN
+    (21) basicexpression -> . TRUE
+    (22) basicexpression -> . FALSE
+    (23) basicexpression -> . NUMBER
+    (24) basicexpression -> . NAME
+
+    MINUS           shift and go to state 4
+    NOT             shift and go to state 11
+    LET             shift and go to state 10
+    IF              shift and go to state 7
+    LPAREN          shift and go to state 6
+    TRUE            shift and go to state 3
+    FALSE           shift and go to state 8
+    NUMBER          shift and go to state 1
+    NAME            shift and go to state 9
+
+    basicexpression                shift and go to state 2
+    expression                     shift and go to state 48
+
+state 34
+
+    (12) expression -> expression AND expression .
+    (2) expression -> expression . PLUS expression
+    (3) expression -> expression . MINUS expression
+    (4) expression -> expression . TIMES expression
+    (5) expression -> expression . DIVIDE expression
+    (6) expression -> expression . MOD expression
+    (7) expression -> expression . EQUALS expression
+    (8) expression -> expression . LEQ expression
+    (9) expression -> expression . LT expression
+    (10) expression -> expression . GEQ expression
+    (11) expression -> expression . GT expression
+    (12) expression -> expression . AND expression
+    (13) expression -> expression . OR expression
+    (14) expression -> expression . NOTEQUALS expression
+
+    OR              reduce using rule 12 (expression -> expression AND expression .)
+    $end            reduce using rule 12 (expression -> expression AND expression .)
+    RPAREN          reduce using rule 12 (expression -> expression AND expression .)
+    THEN            reduce using rule 12 (expression -> expression AND expression .)
+    ELSE            reduce using rule 12 (expression -> expression AND expression .)
+    IN              reduce using rule 12 (expression -> expression AND expression .)
+    PLUS            shift and go to state 28
+    MINUS           shift and go to state 29
+    TIMES           shift and go to state 25
+    DIVIDE          shift and go to state 22
+    MOD             shift and go to state 30
+    EQUALS          shift and go to state 24
+    LEQ             shift and go to state 26
+    LT              shift and go to state 27
+    GEQ             shift and go to state 20
+    GT              shift and go to state 21
+    AND             shift and go to state 18
+    NOTEQUALS       shift and go to state 23
+
+  ! PLUS            [ reduce using rule 12 (expression -> expression AND expression .) ]
+  ! MINUS           [ reduce using rule 12 (expression -> expression AND expression .) ]
+  ! TIMES           [ reduce using rule 12 (expression -> expression AND expression .) ]
+  ! DIVIDE          [ reduce using rule 12 (expression -> expression AND expression .) ]
+  ! MOD             [ reduce using rule 12 (expression -> expression AND expression .) ]
+  ! EQUALS          [ reduce using rule 12 (expression -> expression AND expression .) ]
+  ! LEQ             [ reduce using rule 12 (expression -> expression AND expression .) ]
+  ! LT              [ reduce using rule 12 (expression -> expression AND expression .) ]
+  ! GEQ             [ reduce using rule 12 (expression -> expression AND expression .) ]
+  ! GT              [ reduce using rule 12 (expression -> expression AND expression .) ]
+  ! AND             [ reduce using rule 12 (expression -> expression AND expression .) ]
+  ! NOTEQUALS       [ reduce using rule 12 (expression -> expression AND expression .) ]
+  ! OR              [ shift and go to state 19 ]
+
+
+state 35
+
+    (13) expression -> expression OR expression .
+    (2) expression -> expression . PLUS expression
+    (3) expression -> expression . MINUS expression
+    (4) expression -> expression . TIMES expression
+    (5) expression -> expression . DIVIDE expression
+    (6) expression -> expression . MOD expression
+    (7) expression -> expression . EQUALS expression
+    (8) expression -> expression . LEQ expression
+    (9) expression -> expression . LT expression
+    (10) expression -> expression . GEQ expression
+    (11) expression -> expression . GT expression
+    (12) expression -> expression . AND expression
+    (13) expression -> expression . OR expression
+    (14) expression -> expression . NOTEQUALS expression
+
+    $end            reduce using rule 13 (expression -> expression OR expression .)
+    RPAREN          reduce using rule 13 (expression -> expression OR expression .)
+    THEN            reduce using rule 13 (expression -> expression OR expression .)
+    ELSE            reduce using rule 13 (expression -> expression OR expression .)
+    IN              reduce using rule 13 (expression -> expression OR expression .)
+    PLUS            shift and go to state 28
+    MINUS           shift and go to state 29
+    TIMES           shift and go to state 25
+    DIVIDE          shift and go to state 22
+    MOD             shift and go to state 30
+    EQUALS          shift and go to state 24
+    LEQ             shift and go to state 26
+    LT              shift and go to state 27
+    GEQ             shift and go to state 20
+    GT              shift and go to state 21
+    AND             shift and go to state 18
+    OR              shift and go to state 19
+    NOTEQUALS       shift and go to state 23
+
+  ! PLUS            [ reduce using rule 13 (expression -> expression OR expression .) ]
+  ! MINUS           [ reduce using rule 13 (expression -> expression OR expression .) ]
+  ! TIMES           [ reduce using rule 13 (expression -> expression OR expression .) ]
+  ! DIVIDE          [ reduce using rule 13 (expression -> expression OR expression .) ]
+  ! MOD             [ reduce using rule 13 (expression -> expression OR expression .) ]
+  ! EQUALS          [ reduce using rule 13 (expression -> expression OR expression .) ]
+  ! LEQ             [ reduce using rule 13 (expression -> expression OR expression .) ]
+  ! LT              [ reduce using rule 13 (expression -> expression OR expression .) ]
+  ! GEQ             [ reduce using rule 13 (expression -> expression OR expression .) ]
+  ! GT              [ reduce using rule 13 (expression -> expression OR expression .) ]
+  ! AND             [ reduce using rule 13 (expression -> expression OR expression .) ]
+  ! OR              [ reduce using rule 13 (expression -> expression OR expression .) ]
+  ! NOTEQUALS       [ reduce using rule 13 (expression -> expression OR expression .) ]
+
+
+state 36
+
+    (10) expression -> expression GEQ expression .
+    (2) expression -> expression . PLUS expression
+    (3) expression -> expression . MINUS expression
+    (4) expression -> expression . TIMES expression
+    (5) expression -> expression . DIVIDE expression
+    (6) expression -> expression . MOD expression
+    (7) expression -> expression . EQUALS expression
+    (8) expression -> expression . LEQ expression
+    (9) expression -> expression . LT expression
+    (10) expression -> expression . GEQ expression
+    (11) expression -> expression . GT expression
+    (12) expression -> expression . AND expression
+    (13) expression -> expression . OR expression
+    (14) expression -> expression . NOTEQUALS expression
+
+    EQUALS          reduce using rule 10 (expression -> expression GEQ expression .)
+    LEQ             reduce using rule 10 (expression -> expression GEQ expression .)
+    LT              reduce using rule 10 (expression -> expression GEQ expression .)
+    GEQ             reduce using rule 10 (expression -> expression GEQ expression .)
+    GT              reduce using rule 10 (expression -> expression GEQ expression .)
+    AND             reduce using rule 10 (expression -> expression GEQ expression .)
+    OR              reduce using rule 10 (expression -> expression GEQ expression .)
+    NOTEQUALS       reduce using rule 10 (expression -> expression GEQ expression .)
+    $end            reduce using rule 10 (expression -> expression GEQ expression .)
+    RPAREN          reduce using rule 10 (expression -> expression GEQ expression .)
+    THEN            reduce using rule 10 (expression -> expression GEQ expression .)
+    ELSE            reduce using rule 10 (expression -> expression GEQ expression .)
+    IN              reduce using rule 10 (expression -> expression GEQ expression .)
+    PLUS            shift and go to state 28
+    MINUS           shift and go to state 29
+    TIMES           shift and go to state 25
+    DIVIDE          shift and go to state 22
+    MOD             shift and go to state 30
+
+  ! PLUS            [ reduce using rule 10 (expression -> expression GEQ expression .) ]
+  ! MINUS           [ reduce using rule 10 (expression -> expression GEQ expression .) ]
+  ! TIMES           [ reduce using rule 10 (expression -> expression GEQ expression .) ]
+  ! DIVIDE          [ reduce using rule 10 (expression -> expression GEQ expression .) ]
+  ! MOD             [ reduce using rule 10 (expression -> expression GEQ expression .) ]
+  ! EQUALS          [ shift and go to state 24 ]
+  ! LEQ             [ shift and go to state 26 ]
+  ! LT              [ shift and go to state 27 ]
+  ! GEQ             [ shift and go to state 20 ]
+  ! GT              [ shift and go to state 21 ]
+  ! AND             [ shift and go to state 18 ]
+  ! OR              [ shift and go to state 19 ]
+  ! NOTEQUALS       [ shift and go to state 23 ]
+
+
+state 37
+
+    (11) expression -> expression GT expression .
+    (2) expression -> expression . PLUS expression
+    (3) expression -> expression . MINUS expression
+    (4) expression -> expression . TIMES expression
+    (5) expression -> expression . DIVIDE expression
+    (6) expression -> expression . MOD expression
+    (7) expression -> expression . EQUALS expression
+    (8) expression -> expression . LEQ expression
+    (9) expression -> expression . LT expression
+    (10) expression -> expression . GEQ expression
+    (11) expression -> expression . GT expression
+    (12) expression -> expression . AND expression
+    (13) expression -> expression . OR expression
+    (14) expression -> expression . NOTEQUALS expression
+
+    EQUALS          reduce using rule 11 (expression -> expression GT expression .)
+    LEQ             reduce using rule 11 (expression -> expression GT expression .)
+    LT              reduce using rule 11 (expression -> expression GT expression .)
+    GEQ             reduce using rule 11 (expression -> expression GT expression .)
+    GT              reduce using rule 11 (expression -> expression GT expression .)
+    AND             reduce using rule 11 (expression -> expression GT expression .)
+    OR              reduce using rule 11 (expression -> expression GT expression .)
+    NOTEQUALS       reduce using rule 11 (expression -> expression GT expression .)
+    $end            reduce using rule 11 (expression -> expression GT expression .)
+    RPAREN          reduce using rule 11 (expression -> expression GT expression .)
+    THEN            reduce using rule 11 (expression -> expression GT expression .)
+    ELSE            reduce using rule 11 (expression -> expression GT expression .)
+    IN              reduce using rule 11 (expression -> expression GT expression .)
+    PLUS            shift and go to state 28
+    MINUS           shift and go to state 29
+    TIMES           shift and go to state 25
+    DIVIDE          shift and go to state 22
+    MOD             shift and go to state 30
+
+  ! PLUS            [ reduce using rule 11 (expression -> expression GT expression .) ]
+  ! MINUS           [ reduce using rule 11 (expression -> expression GT expression .) ]
+  ! TIMES           [ reduce using rule 11 (expression -> expression GT expression .) ]
+  ! DIVIDE          [ reduce using rule 11 (expression -> expression GT expression .) ]
+  ! MOD             [ reduce using rule 11 (expression -> expression GT expression .) ]
+  ! EQUALS          [ shift and go to state 24 ]
+  ! LEQ             [ shift and go to state 26 ]
+  ! LT              [ shift and go to state 27 ]
+  ! GEQ             [ shift and go to state 20 ]
+  ! GT              [ shift and go to state 21 ]
+  ! AND             [ shift and go to state 18 ]
+  ! OR              [ shift and go to state 19 ]
+  ! NOTEQUALS       [ shift and go to state 23 ]
+
+
+state 38
+
+    (5) expression -> expression DIVIDE expression .
+    (2) expression -> expression . PLUS expression
+    (3) expression -> expression . MINUS expression
+    (4) expression -> expression . TIMES expression
+    (5) expression -> expression . DIVIDE expression
+    (6) expression -> expression . MOD expression
+    (7) expression -> expression . EQUALS expression
+    (8) expression -> expression . LEQ expression
+    (9) expression -> expression . LT expression
+    (10) expression -> expression . GEQ expression
+    (11) expression -> expression . GT expression
+    (12) expression -> expression . AND expression
+    (13) expression -> expression . OR expression
+    (14) expression -> expression . NOTEQUALS expression
+
+    PLUS            reduce using rule 5 (expression -> expression DIVIDE expression .)
+    MINUS           reduce using rule 5 (expression -> expression DIVIDE expression .)
+    TIMES           reduce using rule 5 (expression -> expression DIVIDE expression .)
+    DIVIDE          reduce using rule 5 (expression -> expression DIVIDE expression .)
+    MOD             reduce using rule 5 (expression -> expression DIVIDE expression .)
+    EQUALS          reduce using rule 5 (expression -> expression DIVIDE expression .)
+    LEQ             reduce using rule 5 (expression -> expression DIVIDE expression .)
+    LT              reduce using rule 5 (expression -> expression DIVIDE expression .)
+    GEQ             reduce using rule 5 (expression -> expression DIVIDE expression .)
+    GT              reduce using rule 5 (expression -> expression DIVIDE expression .)
+    AND             reduce using rule 5 (expression -> expression DIVIDE expression .)
+    OR              reduce using rule 5 (expression -> expression DIVIDE expression .)
+    NOTEQUALS       reduce using rule 5 (expression -> expression DIVIDE expression .)
+    $end            reduce using rule 5 (expression -> expression DIVIDE expression .)
+    RPAREN          reduce using rule 5 (expression -> expression DIVIDE expression .)
+    THEN            reduce using rule 5 (expression -> expression DIVIDE expression .)
+    ELSE            reduce using rule 5 (expression -> expression DIVIDE expression .)
+    IN              reduce using rule 5 (expression -> expression DIVIDE expression .)
+
+  ! PLUS            [ shift and go to state 28 ]
+  ! MINUS           [ shift and go to state 29 ]
+  ! TIMES           [ shift and go to state 25 ]
+  ! DIVIDE          [ shift and go to state 22 ]
+  ! MOD             [ shift and go to state 30 ]
+  ! EQUALS          [ shift and go to state 24 ]
+  ! LEQ             [ shift and go to state 26 ]
+  ! LT              [ shift and go to state 27 ]
+  ! GEQ             [ shift and go to state 20 ]
+  ! GT              [ shift and go to state 21 ]
+  ! AND             [ shift and go to state 18 ]
+  ! OR              [ shift and go to state 19 ]
+  ! NOTEQUALS       [ shift and go to state 23 ]
+
+
+state 39
+
+    (14) expression -> expression NOTEQUALS expression .
+    (2) expression -> expression . PLUS expression
+    (3) expression -> expression . MINUS expression
+    (4) expression -> expression . TIMES expression
+    (5) expression -> expression . DIVIDE expression
+    (6) expression -> expression . MOD expression
+    (7) expression -> expression . EQUALS expression
+    (8) expression -> expression . LEQ expression
+    (9) expression -> expression . LT expression
+    (10) expression -> expression . GEQ expression
+    (11) expression -> expression . GT expression
+    (12) expression -> expression . AND expression
+    (13) expression -> expression . OR expression
+    (14) expression -> expression . NOTEQUALS expression
+
+    EQUALS          reduce using rule 14 (expression -> expression NOTEQUALS expression .)
+    LEQ             reduce using rule 14 (expression -> expression NOTEQUALS expression .)
+    LT              reduce using rule 14 (expression -> expression NOTEQUALS expression .)
+    GEQ             reduce using rule 14 (expression -> expression NOTEQUALS expression .)
+    GT              reduce using rule 14 (expression -> expression NOTEQUALS expression .)
+    AND             reduce using rule 14 (expression -> expression NOTEQUALS expression .)
+    OR              reduce using rule 14 (expression -> expression NOTEQUALS expression .)
+    NOTEQUALS       reduce using rule 14 (expression -> expression NOTEQUALS expression .)
+    $end            reduce using rule 14 (expression -> expression NOTEQUALS expression .)
+    RPAREN          reduce using rule 14 (expression -> expression NOTEQUALS expression .)
+    THEN            reduce using rule 14 (expression -> expression NOTEQUALS expression .)
+    ELSE            reduce using rule 14 (expression -> expression NOTEQUALS expression .)
+    IN              reduce using rule 14 (expression -> expression NOTEQUALS expression .)
+    PLUS            shift and go to state 28
+    MINUS           shift and go to state 29
+    TIMES           shift and go to state 25
+    DIVIDE          shift and go to state 22
+    MOD             shift and go to state 30
+
+  ! PLUS            [ reduce using rule 14 (expression -> expression NOTEQUALS expression .) ]
+  ! MINUS           [ reduce using rule 14 (expression -> expression NOTEQUALS expression .) ]
+  ! TIMES           [ reduce using rule 14 (expression -> expression NOTEQUALS expression .) ]
+  ! DIVIDE          [ reduce using rule 14 (expression -> expression NOTEQUALS expression .) ]
+  ! MOD             [ reduce using rule 14 (expression -> expression NOTEQUALS expression .) ]
+  ! EQUALS          [ shift and go to state 24 ]
+  ! LEQ             [ shift and go to state 26 ]
+  ! LT              [ shift and go to state 27 ]
+  ! GEQ             [ shift and go to state 20 ]
+  ! GT              [ shift and go to state 21 ]
+  ! AND             [ shift and go to state 18 ]
+  ! OR              [ shift and go to state 19 ]
+  ! NOTEQUALS       [ shift and go to state 23 ]
+
+
+state 40
+
+    (7) expression -> expression EQUALS expression .
+    (2) expression -> expression . PLUS expression
+    (3) expression -> expression . MINUS expression
+    (4) expression -> expression . TIMES expression
+    (5) expression -> expression . DIVIDE expression
+    (6) expression -> expression . MOD expression
+    (7) expression -> expression . EQUALS expression
+    (8) expression -> expression . LEQ expression
+    (9) expression -> expression . LT expression
+    (10) expression -> expression . GEQ expression
+    (11) expression -> expression . GT expression
+    (12) expression -> expression . AND expression
+    (13) expression -> expression . OR expression
+    (14) expression -> expression . NOTEQUALS expression
+
+    EQUALS          reduce using rule 7 (expression -> expression EQUALS expression .)
+    LEQ             reduce using rule 7 (expression -> expression EQUALS expression .)
+    LT              reduce using rule 7 (expression -> expression EQUALS expression .)
+    GEQ             reduce using rule 7 (expression -> expression EQUALS expression .)
+    GT              reduce using rule 7 (expression -> expression EQUALS expression .)
+    AND             reduce using rule 7 (expression -> expression EQUALS expression .)
+    OR              reduce using rule 7 (expression -> expression EQUALS expression .)
+    NOTEQUALS       reduce using rule 7 (expression -> expression EQUALS expression .)
+    $end            reduce using rule 7 (expression -> expression EQUALS expression .)
+    RPAREN          reduce using rule 7 (expression -> expression EQUALS expression .)
+    THEN            reduce using rule 7 (expression -> expression EQUALS expression .)
+    ELSE            reduce using rule 7 (expression -> expression EQUALS expression .)
+    IN              reduce using rule 7 (expression -> expression EQUALS expression .)
+    PLUS            shift and go to state 28
+    MINUS           shift and go to state 29
+    TIMES           shift and go to state 25
+    DIVIDE          shift and go to state 22
+    MOD             shift and go to state 30
+
+  ! PLUS            [ reduce using rule 7 (expression -> expression EQUALS expression .) ]
+  ! MINUS           [ reduce using rule 7 (expression -> expression EQUALS expression .) ]
+  ! TIMES           [ reduce using rule 7 (expression -> expression EQUALS expression .) ]
+  ! DIVIDE          [ reduce using rule 7 (expression -> expression EQUALS expression .) ]
+  ! MOD             [ reduce using rule 7 (expression -> expression EQUALS expression .) ]
+  ! EQUALS          [ shift and go to state 24 ]
+  ! LEQ             [ shift and go to state 26 ]
+  ! LT              [ shift and go to state 27 ]
+  ! GEQ             [ shift and go to state 20 ]
+  ! GT              [ shift and go to state 21 ]
+  ! AND             [ shift and go to state 18 ]
+  ! OR              [ shift and go to state 19 ]
+  ! NOTEQUALS       [ shift and go to state 23 ]
+
+
+state 41
+
+    (4) expression -> expression TIMES expression .
+    (2) expression -> expression . PLUS expression
+    (3) expression -> expression . MINUS expression
+    (4) expression -> expression . TIMES expression
+    (5) expression -> expression . DIVIDE expression
+    (6) expression -> expression . MOD expression
+    (7) expression -> expression . EQUALS expression
+    (8) expression -> expression . LEQ expression
+    (9) expression -> expression . LT expression
+    (10) expression -> expression . GEQ expression
+    (11) expression -> expression . GT expression
+    (12) expression -> expression . AND expression
+    (13) expression -> expression . OR expression
+    (14) expression -> expression . NOTEQUALS expression
+
+    PLUS            reduce using rule 4 (expression -> expression TIMES expression .)
+    MINUS           reduce using rule 4 (expression -> expression TIMES expression .)
+    TIMES           reduce using rule 4 (expression -> expression TIMES expression .)
+    DIVIDE          reduce using rule 4 (expression -> expression TIMES expression .)
+    MOD             reduce using rule 4 (expression -> expression TIMES expression .)
+    EQUALS          reduce using rule 4 (expression -> expression TIMES expression .)
+    LEQ             reduce using rule 4 (expression -> expression TIMES expression .)
+    LT              reduce using rule 4 (expression -> expression TIMES expression .)
+    GEQ             reduce using rule 4 (expression -> expression TIMES expression .)
+    GT              reduce using rule 4 (expression -> expression TIMES expression .)
+    AND             reduce using rule 4 (expression -> expression TIMES expression .)
+    OR              reduce using rule 4 (expression -> expression TIMES expression .)
+    NOTEQUALS       reduce using rule 4 (expression -> expression TIMES expression .)
+    $end            reduce using rule 4 (expression -> expression TIMES expression .)
+    RPAREN          reduce using rule 4 (expression -> expression TIMES expression .)
+    THEN            reduce using rule 4 (expression -> expression TIMES expression .)
+    ELSE            reduce using rule 4 (expression -> expression TIMES expression .)
+    IN              reduce using rule 4 (expression -> expression TIMES expression .)
+
+  ! PLUS            [ shift and go to state 28 ]
+  ! MINUS           [ shift and go to state 29 ]
+  ! TIMES           [ shift and go to state 25 ]
+  ! DIVIDE          [ shift and go to state 22 ]
+  ! MOD             [ shift and go to state 30 ]
+  ! EQUALS          [ shift and go to state 24 ]
+  ! LEQ             [ shift and go to state 26 ]
+  ! LT              [ shift and go to state 27 ]
+  ! GEQ             [ shift and go to state 20 ]
+  ! GT              [ shift and go to state 21 ]
+  ! AND             [ shift and go to state 18 ]
+  ! OR              [ shift and go to state 19 ]
+  ! NOTEQUALS       [ shift and go to state 23 ]
+
+
+state 42
+
+    (8) expression -> expression LEQ expression .
+    (2) expression -> expression . PLUS expression
+    (3) expression -> expression . MINUS expression
+    (4) expression -> expression . TIMES expression
+    (5) expression -> expression . DIVIDE expression
+    (6) expression -> expression . MOD expression
+    (7) expression -> expression . EQUALS expression
+    (8) expression -> expression . LEQ expression
+    (9) expression -> expression . LT expression
+    (10) expression -> expression . GEQ expression
+    (11) expression -> expression . GT expression
+    (12) expression -> expression . AND expression
+    (13) expression -> expression . OR expression
+    (14) expression -> expression . NOTEQUALS expression
+
+    EQUALS          reduce using rule 8 (expression -> expression LEQ expression .)
+    LEQ             reduce using rule 8 (expression -> expression LEQ expression .)
+    LT              reduce using rule 8 (expression -> expression LEQ expression .)
+    GEQ             reduce using rule 8 (expression -> expression LEQ expression .)
+    GT              reduce using rule 8 (expression -> expression LEQ expression .)
+    AND             reduce using rule 8 (expression -> expression LEQ expression .)
+    OR              reduce using rule 8 (expression -> expression LEQ expression .)
+    NOTEQUALS       reduce using rule 8 (expression -> expression LEQ expression .)
+    $end            reduce using rule 8 (expression -> expression LEQ expression .)
+    RPAREN          reduce using rule 8 (expression -> expression LEQ expression .)
+    THEN            reduce using rule 8 (expression -> expression LEQ expression .)
+    ELSE            reduce using rule 8 (expression -> expression LEQ expression .)
+    IN              reduce using rule 8 (expression -> expression LEQ expression .)
+    PLUS            shift and go to state 28
+    MINUS           shift and go to state 29
+    TIMES           shift and go to state 25
+    DIVIDE          shift and go to state 22
+    MOD             shift and go to state 30
+
+  ! PLUS            [ reduce using rule 8 (expression -> expression LEQ expression .) ]
+  ! MINUS           [ reduce using rule 8 (expression -> expression LEQ expression .) ]
+  ! TIMES           [ reduce using rule 8 (expression -> expression LEQ expression .) ]
+  ! DIVIDE          [ reduce using rule 8 (expression -> expression LEQ expression .) ]
+  ! MOD             [ reduce using rule 8 (expression -> expression LEQ expression .) ]
+  ! EQUALS          [ shift and go to state 24 ]
+  ! LEQ             [ shift and go to state 26 ]
+  ! LT              [ shift and go to state 27 ]
+  ! GEQ             [ shift and go to state 20 ]
+  ! GT              [ shift and go to state 21 ]
+  ! AND             [ shift and go to state 18 ]
+  ! OR              [ shift and go to state 19 ]
+  ! NOTEQUALS       [ shift and go to state 23 ]
+
+
+state 43
+
+    (9) expression -> expression LT expression .
+    (2) expression -> expression . PLUS expression
+    (3) expression -> expression . MINUS expression
+    (4) expression -> expression . TIMES expression
+    (5) expression -> expression . DIVIDE expression
+    (6) expression -> expression . MOD expression
+    (7) expression -> expression . EQUALS expression
+    (8) expression -> expression . LEQ expression
+    (9) expression -> expression . LT expression
+    (10) expression -> expression . GEQ expression
+    (11) expression -> expression . GT expression
+    (12) expression -> expression . AND expression
+    (13) expression -> expression . OR expression
+    (14) expression -> expression . NOTEQUALS expression
+
+    EQUALS          reduce using rule 9 (expression -> expression LT expression .)
+    LEQ             reduce using rule 9 (expression -> expression LT expression .)
+    LT              reduce using rule 9 (expression -> expression LT expression .)
+    GEQ             reduce using rule 9 (expression -> expression LT expression .)
+    GT              reduce using rule 9 (expression -> expression LT expression .)
+    AND             reduce using rule 9 (expression -> expression LT expression .)
+    OR              reduce using rule 9 (expression -> expression LT expression .)
+    NOTEQUALS       reduce using rule 9 (expression -> expression LT expression .)
+    $end            reduce using rule 9 (expression -> expression LT expression .)
+    RPAREN          reduce using rule 9 (expression -> expression LT expression .)
+    THEN            reduce using rule 9 (expression -> expression LT expression .)
+    ELSE            reduce using rule 9 (expression -> expression LT expression .)
+    IN              reduce using rule 9 (expression -> expression LT expression .)
+    PLUS            shift and go to state 28
+    MINUS           shift and go to state 29
+    TIMES           shift and go to state 25
+    DIVIDE          shift and go to state 22
+    MOD             shift and go to state 30
+
+  ! PLUS            [ reduce using rule 9 (expression -> expression LT expression .) ]
+  ! MINUS           [ reduce using rule 9 (expression -> expression LT expression .) ]
+  ! TIMES           [ reduce using rule 9 (expression -> expression LT expression .) ]
+  ! DIVIDE          [ reduce using rule 9 (expression -> expression LT expression .) ]
+  ! MOD             [ reduce using rule 9 (expression -> expression LT expression .) ]
+  ! EQUALS          [ shift and go to state 24 ]
+  ! LEQ             [ shift and go to state 26 ]
+  ! LT              [ shift and go to state 27 ]
+  ! GEQ             [ shift and go to state 20 ]
+  ! GT              [ shift and go to state 21 ]
+  ! AND             [ shift and go to state 18 ]
+  ! OR              [ shift and go to state 19 ]
+  ! NOTEQUALS       [ shift and go to state 23 ]
+
+
+state 44
+
+    (2) expression -> expression PLUS expression .
+    (2) expression -> expression . PLUS expression
+    (3) expression -> expression . MINUS expression
+    (4) expression -> expression . TIMES expression
+    (5) expression -> expression . DIVIDE expression
+    (6) expression -> expression . MOD expression
+    (7) expression -> expression . EQUALS expression
+    (8) expression -> expression . LEQ expression
+    (9) expression -> expression . LT expression
+    (10) expression -> expression . GEQ expression
+    (11) expression -> expression . GT expression
+    (12) expression -> expression . AND expression
+    (13) expression -> expression . OR expression
+    (14) expression -> expression . NOTEQUALS expression
+
+    PLUS            reduce using rule 2 (expression -> expression PLUS expression .)
+    MINUS           reduce using rule 2 (expression -> expression PLUS expression .)
+    EQUALS          reduce using rule 2 (expression -> expression PLUS expression .)
+    LEQ             reduce using rule 2 (expression -> expression PLUS expression .)
+    LT              reduce using rule 2 (expression -> expression PLUS expression .)
+    GEQ             reduce using rule 2 (expression -> expression PLUS expression .)
+    GT              reduce using rule 2 (expression -> expression PLUS expression .)
+    AND             reduce using rule 2 (expression -> expression PLUS expression .)
+    OR              reduce using rule 2 (expression -> expression PLUS expression .)
+    NOTEQUALS       reduce using rule 2 (expression -> expression PLUS expression .)
+    $end            reduce using rule 2 (expression -> expression PLUS expression .)
+    RPAREN          reduce using rule 2 (expression -> expression PLUS expression .)
+    THEN            reduce using rule 2 (expression -> expression PLUS expression .)
+    ELSE            reduce using rule 2 (expression -> expression PLUS expression .)
+    IN              reduce using rule 2 (expression -> expression PLUS expression .)
+    TIMES           shift and go to state 25
+    DIVIDE          shift and go to state 22
+    MOD             shift and go to state 30
+
+  ! TIMES           [ reduce using rule 2 (expression -> expression PLUS expression .) ]
+  ! DIVIDE          [ reduce using rule 2 (expression -> expression PLUS expression .) ]
+  ! MOD             [ reduce using rule 2 (expression -> expression PLUS expression .) ]
+  ! PLUS            [ shift and go to state 28 ]
+  ! MINUS           [ shift and go to state 29 ]
+  ! EQUALS          [ shift and go to state 24 ]
+  ! LEQ             [ shift and go to state 26 ]
+  ! LT              [ shift and go to state 27 ]
+  ! GEQ             [ shift and go to state 20 ]
+  ! GT              [ shift and go to state 21 ]
+  ! AND             [ shift and go to state 18 ]
+  ! OR              [ shift and go to state 19 ]
+  ! NOTEQUALS       [ shift and go to state 23 ]
+
+
+state 45
+
+    (3) expression -> expression MINUS expression .
+    (2) expression -> expression . PLUS expression
+    (3) expression -> expression . MINUS expression
+    (4) expression -> expression . TIMES expression
+    (5) expression -> expression . DIVIDE expression
+    (6) expression -> expression . MOD expression
+    (7) expression -> expression . EQUALS expression
+    (8) expression -> expression . LEQ expression
+    (9) expression -> expression . LT expression
+    (10) expression -> expression . GEQ expression
+    (11) expression -> expression . GT expression
+    (12) expression -> expression . AND expression
+    (13) expression -> expression . OR expression
+    (14) expression -> expression . NOTEQUALS expression
+
+    PLUS            reduce using rule 3 (expression -> expression MINUS expression .)
+    MINUS           reduce using rule 3 (expression -> expression MINUS expression .)
+    EQUALS          reduce using rule 3 (expression -> expression MINUS expression .)
+    LEQ             reduce using rule 3 (expression -> expression MINUS expression .)
+    LT              reduce using rule 3 (expression -> expression MINUS expression .)
+    GEQ             reduce using rule 3 (expression -> expression MINUS expression .)
+    GT              reduce using rule 3 (expression -> expression MINUS expression .)
+    AND             reduce using rule 3 (expression -> expression MINUS expression .)
+    OR              reduce using rule 3 (expression -> expression MINUS expression .)
+    NOTEQUALS       reduce using rule 3 (expression -> expression MINUS expression .)
+    $end            reduce using rule 3 (expression -> expression MINUS expression .)
+    RPAREN          reduce using rule 3 (expression -> expression MINUS expression .)
+    THEN            reduce using rule 3 (expression -> expression MINUS expression .)
+    ELSE            reduce using rule 3 (expression -> expression MINUS expression .)
+    IN              reduce using rule 3 (expression -> expression MINUS expression .)
+    TIMES           shift and go to state 25
+    DIVIDE          shift and go to state 22
+    MOD             shift and go to state 30
+
+  ! TIMES           [ reduce using rule 3 (expression -> expression MINUS expression .) ]
+  ! DIVIDE          [ reduce using rule 3 (expression -> expression MINUS expression .) ]
+  ! MOD             [ reduce using rule 3 (expression -> expression MINUS expression .) ]
+  ! PLUS            [ shift and go to state 28 ]
+  ! MINUS           [ shift and go to state 29 ]
+  ! EQUALS          [ shift and go to state 24 ]
+  ! LEQ             [ shift and go to state 26 ]
+  ! LT              [ shift and go to state 27 ]
+  ! GEQ             [ shift and go to state 20 ]
+  ! GT              [ shift and go to state 21 ]
+  ! AND             [ shift and go to state 18 ]
+  ! OR              [ shift and go to state 19 ]
+  ! NOTEQUALS       [ shift and go to state 23 ]
+
+
+state 46
+
+    (6) expression -> expression MOD expression .
+    (2) expression -> expression . PLUS expression
+    (3) expression -> expression . MINUS expression
+    (4) expression -> expression . TIMES expression
+    (5) expression -> expression . DIVIDE expression
+    (6) expression -> expression . MOD expression
+    (7) expression -> expression . EQUALS expression
+    (8) expression -> expression . LEQ expression
+    (9) expression -> expression . LT expression
+    (10) expression -> expression . GEQ expression
+    (11) expression -> expression . GT expression
+    (12) expression -> expression . AND expression
+    (13) expression -> expression . OR expression
+    (14) expression -> expression . NOTEQUALS expression
+
+    PLUS            reduce using rule 6 (expression -> expression MOD expression .)
+    MINUS           reduce using rule 6 (expression -> expression MOD expression .)
+    TIMES           reduce using rule 6 (expression -> expression MOD expression .)
+    DIVIDE          reduce using rule 6 (expression -> expression MOD expression .)
+    MOD             reduce using rule 6 (expression -> expression MOD expression .)
+    EQUALS          reduce using rule 6 (expression -> expression MOD expression .)
+    LEQ             reduce using rule 6 (expression -> expression MOD expression .)
+    LT              reduce using rule 6 (expression -> expression MOD expression .)
+    GEQ             reduce using rule 6 (expression -> expression MOD expression .)
+    GT              reduce using rule 6 (expression -> expression MOD expression .)
+    AND             reduce using rule 6 (expression -> expression MOD expression .)
+    OR              reduce using rule 6 (expression -> expression MOD expression .)
+    NOTEQUALS       reduce using rule 6 (expression -> expression MOD expression .)
+    $end            reduce using rule 6 (expression -> expression MOD expression .)
+    RPAREN          reduce using rule 6 (expression -> expression MOD expression .)
+    THEN            reduce using rule 6 (expression -> expression MOD expression .)
+    ELSE            reduce using rule 6 (expression -> expression MOD expression .)
+    IN              reduce using rule 6 (expression -> expression MOD expression .)
+
+  ! PLUS            [ shift and go to state 28 ]
+  ! MINUS           [ shift and go to state 29 ]
+  ! TIMES           [ shift and go to state 25 ]
+  ! DIVIDE          [ shift and go to state 22 ]
+  ! MOD             [ shift and go to state 30 ]
+  ! EQUALS          [ shift and go to state 24 ]
+  ! LEQ             [ shift and go to state 26 ]
+  ! LT              [ shift and go to state 27 ]
+  ! GEQ             [ shift and go to state 20 ]
+  ! GT              [ shift and go to state 21 ]
+  ! AND             [ shift and go to state 18 ]
+  ! OR              [ shift and go to state 19 ]
+  ! NOTEQUALS       [ shift and go to state 23 ]
+
+
+state 47
+
+    (18) expression -> IF expression THEN expression . ELSE expression
+    (2) expression -> expression . PLUS expression
+    (3) expression -> expression . MINUS expression
+    (4) expression -> expression . TIMES expression
+    (5) expression -> expression . DIVIDE expression
+    (6) expression -> expression . MOD expression
+    (7) expression -> expression . EQUALS expression
+    (8) expression -> expression . LEQ expression
+    (9) expression -> expression . LT expression
+    (10) expression -> expression . GEQ expression
+    (11) expression -> expression . GT expression
+    (12) expression -> expression . AND expression
+    (13) expression -> expression . OR expression
+    (14) expression -> expression . NOTEQUALS expression
+
+    ELSE            shift and go to state 49
+    PLUS            shift and go to state 28
+    MINUS           shift and go to state 29
+    TIMES           shift and go to state 25
+    DIVIDE          shift and go to state 22
+    MOD             shift and go to state 30
+    EQUALS          shift and go to state 24
+    LEQ             shift and go to state 26
+    LT              shift and go to state 27
+    GEQ             shift and go to state 20
+    GT              shift and go to state 21
+    AND             shift and go to state 18
+    OR              shift and go to state 19
+    NOTEQUALS       shift and go to state 23
+
+
+state 48
+
+    (17) expression -> LET NAME EQUALS expression . IN expression
+    (2) expression -> expression . PLUS expression
+    (3) expression -> expression . MINUS expression
+    (4) expression -> expression . TIMES expression
+    (5) expression -> expression . DIVIDE expression
+    (6) expression -> expression . MOD expression
+    (7) expression -> expression . EQUALS expression
+    (8) expression -> expression . LEQ expression
+    (9) expression -> expression . LT expression
+    (10) expression -> expression . GEQ expression
+    (11) expression -> expression . GT expression
+    (12) expression -> expression . AND expression
+    (13) expression -> expression . OR expression
+    (14) expression -> expression . NOTEQUALS expression
+
+    IN              shift and go to state 50
+    PLUS            shift and go to state 28
+    MINUS           shift and go to state 29
+    TIMES           shift and go to state 25
+    DIVIDE          shift and go to state 22
+    MOD             shift and go to state 30
+    EQUALS          shift and go to state 24
+    LEQ             shift and go to state 26
+    LT              shift and go to state 27
+    GEQ             shift and go to state 20
+    GT              shift and go to state 21
+    AND             shift and go to state 18
+    OR              shift and go to state 19
+    NOTEQUALS       shift and go to state 23
+
+
+state 49
+
+    (18) expression -> IF expression THEN expression ELSE . expression
+    (2) expression -> . expression PLUS expression
+    (3) expression -> . expression MINUS expression
+    (4) expression -> . expression TIMES expression
+    (5) expression -> . expression DIVIDE expression
+    (6) expression -> . expression MOD expression
+    (7) expression -> . expression EQUALS expression
+    (8) expression -> . expression LEQ expression
+    (9) expression -> . expression LT expression
+    (10) expression -> . expression GEQ expression
+    (11) expression -> . expression GT expression
+    (12) expression -> . expression AND expression
+    (13) expression -> . expression OR expression
+    (14) expression -> . expression NOTEQUALS expression
+    (15) expression -> . MINUS expression
+    (16) expression -> . NOT expression
+    (17) expression -> . LET NAME EQUALS expression IN expression
+    (18) expression -> . IF expression THEN expression ELSE expression
+    (19) expression -> . basicexpression
+    (20) basicexpression -> . LPAREN expression RPAREN
+    (21) basicexpression -> . TRUE
+    (22) basicexpression -> . FALSE
+    (23) basicexpression -> . NUMBER
+    (24) basicexpression -> . NAME
+
+    MINUS           shift and go to state 4
+    NOT             shift and go to state 11
+    LET             shift and go to state 10
+    IF              shift and go to state 7
+    LPAREN          shift and go to state 6
+    TRUE            shift and go to state 3
+    FALSE           shift and go to state 8
+    NUMBER          shift and go to state 1
+    NAME            shift and go to state 9
+
+    basicexpression                shift and go to state 2
+    expression                     shift and go to state 51
+
+state 50
+
+    (17) expression -> LET NAME EQUALS expression IN . expression
+    (2) expression -> . expression PLUS expression
+    (3) expression -> . expression MINUS expression
+    (4) expression -> . expression TIMES expression
+    (5) expression -> . expression DIVIDE expression
+    (6) expression -> . expression MOD expression
+    (7) expression -> . expression EQUALS expression
+    (8) expression -> . expression LEQ expression
+    (9) expression -> . expression LT expression
+    (10) expression -> . expression GEQ expression
+    (11) expression -> . expression GT expression
+    (12) expression -> . expression AND expression
+    (13) expression -> . expression OR expression
+    (14) expression -> . expression NOTEQUALS expression
+    (15) expression -> . MINUS expression
+    (16) expression -> . NOT expression
+    (17) expression -> . LET NAME EQUALS expression IN expression
+    (18) expression -> . IF expression THEN expression ELSE expression
+    (19) expression -> . basicexpression
+    (20) basicexpression -> . LPAREN expression RPAREN
+    (21) basicexpression -> . TRUE
+    (22) basicexpression -> . FALSE
+    (23) basicexpression -> . NUMBER
+    (24) basicexpression -> . NAME
+
+    MINUS           shift and go to state 4
+    NOT             shift and go to state 11
+    LET             shift and go to state 10
+    IF              shift and go to state 7
+    LPAREN          shift and go to state 6
+    TRUE            shift and go to state 3
+    FALSE           shift and go to state 8
+    NUMBER          shift and go to state 1
+    NAME            shift and go to state 9
+
+    basicexpression                shift and go to state 2
+    expression                     shift and go to state 52
+
+state 51
+
+    (18) expression -> IF expression THEN expression ELSE expression .
+    (2) expression -> expression . PLUS expression
+    (3) expression -> expression . MINUS expression
+    (4) expression -> expression . TIMES expression
+    (5) expression -> expression . DIVIDE expression
+    (6) expression -> expression . MOD expression
+    (7) expression -> expression . EQUALS expression
+    (8) expression -> expression . LEQ expression
+    (9) expression -> expression . LT expression
+    (10) expression -> expression . GEQ expression
+    (11) expression -> expression . GT expression
+    (12) expression -> expression . AND expression
+    (13) expression -> expression . OR expression
+    (14) expression -> expression . NOTEQUALS expression
+
+    $end            reduce using rule 18 (expression -> IF expression THEN expression ELSE expression .)
+    RPAREN          reduce using rule 18 (expression -> IF expression THEN expression ELSE expression .)
+    THEN            reduce using rule 18 (expression -> IF expression THEN expression ELSE expression .)
+    ELSE            reduce using rule 18 (expression -> IF expression THEN expression ELSE expression .)
+    IN              reduce using rule 18 (expression -> IF expression THEN expression ELSE expression .)
+    PLUS            shift and go to state 28
+    MINUS           shift and go to state 29
+    TIMES           shift and go to state 25
+    DIVIDE          shift and go to state 22
+    MOD             shift and go to state 30
+    EQUALS          shift and go to state 24
+    LEQ             shift and go to state 26
+    LT              shift and go to state 27
+    GEQ             shift and go to state 20
+    GT              shift and go to state 21
+    AND             shift and go to state 18
+    OR              shift and go to state 19
+    NOTEQUALS       shift and go to state 23
+
+  ! PLUS            [ reduce using rule 18 (expression -> IF expression THEN expression ELSE expression .) ]
+  ! MINUS           [ reduce using rule 18 (expression -> IF expression THEN expression ELSE expression .) ]
+  ! TIMES           [ reduce using rule 18 (expression -> IF expression THEN expression ELSE expression .) ]
+  ! DIVIDE          [ reduce using rule 18 (expression -> IF expression THEN expression ELSE expression .) ]
+  ! MOD             [ reduce using rule 18 (expression -> IF expression THEN expression ELSE expression .) ]
+  ! EQUALS          [ reduce using rule 18 (expression -> IF expression THEN expression ELSE expression .) ]
+  ! LEQ             [ reduce using rule 18 (expression -> IF expression THEN expression ELSE expression .) ]
+  ! LT              [ reduce using rule 18 (expression -> IF expression THEN expression ELSE expression .) ]
+  ! GEQ             [ reduce using rule 18 (expression -> IF expression THEN expression ELSE expression .) ]
+  ! GT              [ reduce using rule 18 (expression -> IF expression THEN expression ELSE expression .) ]
+  ! AND             [ reduce using rule 18 (expression -> IF expression THEN expression ELSE expression .) ]
+  ! OR              [ reduce using rule 18 (expression -> IF expression THEN expression ELSE expression .) ]
+  ! NOTEQUALS       [ reduce using rule 18 (expression -> IF expression THEN expression ELSE expression .) ]
+
+
+state 52
+
+    (17) expression -> LET NAME EQUALS expression IN expression .
+    (2) expression -> expression . PLUS expression
+    (3) expression -> expression . MINUS expression
+    (4) expression -> expression . TIMES expression
+    (5) expression -> expression . DIVIDE expression
+    (6) expression -> expression . MOD expression
+    (7) expression -> expression . EQUALS expression
+    (8) expression -> expression . LEQ expression
+    (9) expression -> expression . LT expression
+    (10) expression -> expression . GEQ expression
+    (11) expression -> expression . GT expression
+    (12) expression -> expression . AND expression
+    (13) expression -> expression . OR expression
+    (14) expression -> expression . NOTEQUALS expression
+
+    $end            reduce using rule 17 (expression -> LET NAME EQUALS expression IN expression .)
+    RPAREN          reduce using rule 17 (expression -> LET NAME EQUALS expression IN expression .)
+    THEN            reduce using rule 17 (expression -> LET NAME EQUALS expression IN expression .)
+    ELSE            reduce using rule 17 (expression -> LET NAME EQUALS expression IN expression .)
+    IN              reduce using rule 17 (expression -> LET NAME EQUALS expression IN expression .)
+    PLUS            shift and go to state 28
+    MINUS           shift and go to state 29
+    TIMES           shift and go to state 25
+    DIVIDE          shift and go to state 22
+    MOD             shift and go to state 30
+    EQUALS          shift and go to state 24
+    LEQ             shift and go to state 26
+    LT              shift and go to state 27
+    GEQ             shift and go to state 20
+    GT              shift and go to state 21
+    AND             shift and go to state 18
+    OR              shift and go to state 19
+    NOTEQUALS       shift and go to state 23
+
+  ! PLUS            [ reduce using rule 17 (expression -> LET NAME EQUALS expression IN expression .) ]
+  ! MINUS           [ reduce using rule 17 (expression -> LET NAME EQUALS expression IN expression .) ]
+  ! TIMES           [ reduce using rule 17 (expression -> LET NAME EQUALS expression IN expression .) ]
+  ! DIVIDE          [ reduce using rule 17 (expression -> LET NAME EQUALS expression IN expression .) ]
+  ! MOD             [ reduce using rule 17 (expression -> LET NAME EQUALS expression IN expression .) ]
+  ! EQUALS          [ reduce using rule 17 (expression -> LET NAME EQUALS expression IN expression .) ]
+  ! LEQ             [ reduce using rule 17 (expression -> LET NAME EQUALS expression IN expression .) ]
+  ! LT              [ reduce using rule 17 (expression -> LET NAME EQUALS expression IN expression .) ]
+  ! GEQ             [ reduce using rule 17 (expression -> LET NAME EQUALS expression IN expression .) ]
+  ! GT              [ reduce using rule 17 (expression -> LET NAME EQUALS expression IN expression .) ]
+  ! AND             [ reduce using rule 17 (expression -> LET NAME EQUALS expression IN expression .) ]
+  ! OR              [ reduce using rule 17 (expression -> LET NAME EQUALS expression IN expression .) ]
+  ! NOTEQUALS       [ reduce using rule 17 (expression -> LET NAME EQUALS expression IN expression .) ]
+

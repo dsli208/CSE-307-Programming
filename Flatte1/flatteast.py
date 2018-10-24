@@ -124,6 +124,7 @@ class BinaryExpr(Expr):
             return arg1_value % arg2_value
             # Can't we just evaluate each of the other expressions?
             #raise Unimplemented("Unimplemented evaluation for binary operator: %s in lineno %d"% (self.bop, self.lineno))
+            # IMPLEMENTATION OF LEFT OUT OPERATORS IS BELOW.  note some of them use different symbols to make it compatible with Python
         elif (self.bop == "="):
             if (arg1_value == arg2_value):
                 return True
@@ -180,6 +181,7 @@ class IfExpr(Expr):
         return "If({0}, {1}, {2})".format(self.cond, self.thenpart, self.elsepart)
 
     # Test this
+    # Complete eval function for if.  Then part is returned if cond_value, else return elsepart
     def eval(self, env):
         cond_value = self.cond.eval(env)
         if (cond_value == True):
@@ -200,7 +202,8 @@ class LetExpr(Expr):
     def __str__(self):
         return "Let({0}, {1}, {2})".format(self.name, self.defexpr, self.useexpr)
 
-
+        # Eval: First two lines are setting x (def_expr_value) to the associated value (env[self.name])
+        # Once that is done, call the portion that goes after "in"
     def eval(self, env):
         def_expr_value = self.defexpr.eval(env)
         env[self.name] = def_expr_value

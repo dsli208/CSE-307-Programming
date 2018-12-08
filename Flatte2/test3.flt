@@ -1,0 +1,4 @@
+let y = 5
+  in let f = fun p -> (fst p + 2*snd p)
+     in let y = 10
+        in f (y, 20);;

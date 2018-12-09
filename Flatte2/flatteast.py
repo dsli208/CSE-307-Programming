@@ -189,7 +189,7 @@ class PairExpr(Expr):
     def eval(self, env):
         arg1_val = self.arg1.eval(env)
         arg2_val = self.arg2.eval(env)
-        return PairExpr(arg1_val, arg2_val, lineno)
+        return PairExpr(arg1_val, arg2_val, self.lineno)
 
 
 class ApplyExpr(Expr):
@@ -204,8 +204,14 @@ class ApplyExpr(Expr):
 
 
     def eval(self, env):
+
         funval = self.funexpr.eval(env)
         argval = self.argexpr.eval(env)
+        #print("ApplyExpr")
+        #print(funval, "-", argval, "-", env)
+        funval[funval["param"]] = argval
+        # Get the old env first
+        return funval["body"].eval(funval)
 
 
 class FunDefExpr(Expr):
@@ -214,14 +220,17 @@ class FunDefExpr(Expr):
         self.lineno = lineno   # Line number in the source program
         self.param = param # Name of the formal parameter (x in x -> e)
         self.body = body # Expression in the body of the defined function (e in x -> e)
+        #self.env = None
 
     def __str__(self):
         return "Fun({0}, {1})".format(self.param, self.body)
 
-
     def eval(self, env):
-        paramval = self.param.eval(env)
+        #print("FunDefExpr")
+        #print(self.body, "-", self.param, "-", env)
+        #env[self.param] = self.body
+        #self.env = env
         newenv = copy.copy(env)
-        newenv[self.param] = paramval
-        return self.
-        raise Unimplemented("Unimplemented evaluation for Pair expression at line %d"% (self.lineno))
+        newenv["body"] = self.body
+        newenv["param"] = self.param
+        return newenv

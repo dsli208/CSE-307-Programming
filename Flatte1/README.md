@@ -4,9 +4,9 @@ In this assignment, you will fill parts of an interpreter for Flatte, an OCaml-l
 ## Homework Structure
 1. Our starting point is the example calculator written using PLY. Before anything else, make sure you know how to execute that calculator.
 I've copied that calculator, and broken it into three files:
-* `calclexer.py` that has the scanner (lexer) specifications.
-* `calcparser.py` that has the parser specifications.
-* `calc.py` that has the main program that puts the other two modules together.
+  * `calclexer.py` that has the scanner (lexer) specifications.
+  * `calcparser.py` that has the parser specifications.
+  * `calc.py` that has the main program that puts the other two modules together.
 
 2. These three files are in `simplecalc.zip`, in a folder called `SimpleCalc`. As the second step, unpack this zip file, and make sure you can run the calculator (e.g. `python calc.py`). Compare this version with the example single-file specification in (1), so that you get an idea of how the modules were split up.
 

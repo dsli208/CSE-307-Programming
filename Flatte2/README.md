@@ -38,10 +38,10 @@ Pair data structures are added to Flatte(1) of HW2 via the addition of three exp
 Your task in this HW is to fill the `eval` complete the `eval` of these `UnaryExpr` classes such that expressions using the pair data structure can be successfully evaluated.
 
 ### Assumptions and Minor Changes
-You may assume that the input it a syntactically and semantically valid expression. That is, not only will the input be successfully parsed, there will be no semantic error in performing the operations. For instance, fst will always operate on a pair, e1 in (e1 e2) will always be a function, e in !e will be a location, etc.
-The front end of the interpreter accepts expressions ending in ";;" (two semicolons, as in OCAML).
-You may also enter "#use filename" at the prompt, which will make the parser read and build an AST for the contents of the given filename. If the file contains a sequence of expressions, they will all be evaluated in order, and their values printed to console.
-A syntactic sugar for function definitions is implemented in the parser in flatte2.zip. This accepts OCAML-style definitions of the form let f x = e1 in e2, in addition to let f = fun x -> e1 in e2. In fact expressions of the first form are converted to the second form by the parser.
+You may assume that the input it a syntactically and semantically valid expression. That is, not only will the input be successfully parsed, there will be no semantic error in performing the operations. For instance, fst will always operate on a pair, `e1` in `(e1 e2)` will always be a function, `e` in `!e` will be a location, etc.
+The front end of the interpreter accepts expressions ending in `;;` (*two* semicolons, as in OCAML).
+You may also enter `#use filename` at the prompt, which will make the parser read and build an AST for the contents of the given filename. If the file contains a sequence of expressions, they will all be evaluated in order, and their values printed to console.
+A syntactic sugar for function definitions is implemented in the parser in flatte2.zip. This accepts OCAML-style definitions of the form `let f x = e1 in e2`, in addition to `let f = fun x -> e1 in e2`. In fact expressions of the first form are converted to the second form by the parser.
 These changes may make it simpler to write test cases for your homework.
 
 ## Option 2: Adding references and assignments
